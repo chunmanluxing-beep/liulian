@@ -216,6 +216,8 @@ footer{ border-top:1px solid var(--line); padding:var(--s6) 0 var(--s7); }
   .types{ grid-template-columns:repeat(4,1fr); }
   .contact{ grid-template-columns:repeat(3,1fr); }
   .hero-shot{ aspect-ratio:16/9; }
+  .mapbox{ max-width:680px; margin-left:auto; margin-right:auto; }
+  .jpmap{ max-height:none; }
   .hero-t{ font-size:34px; }
   section{ padding:var(--s8) 0; }
   .sec-h h2{ font-size:24px; }
