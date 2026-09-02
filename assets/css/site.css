@@ -229,3 +229,103 @@ footer{ border-top:1px solid var(--line); padding:var(--s6) 0 var(--s7); }
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
 }
+
+/* ═══════════════ L2 ═══════════════ */
+
+/* ── 精致地图(Natural Earth) ── */
+.jpmap{ display:block; width:100%; height:auto; }
+.jpmap .pref{ fill:#EFEBE3; stroke:#D8D2C7; stroke-width:.7; stroke-linejoin:round; }
+.jpmap .pref.hl{ fill:#DFE7EC; stroke:#BccAD4; }
+.jpmap .pref.hl{ stroke:#B9CAD6; }
+.jpmap .pin{ fill:var(--accent); stroke:#fff; stroke-width:1.6; }
+.jpmap .pin-hit{ fill:transparent; }
+.jpmap .lead{ stroke:#9FB2BF; stroke-width:1; }
+.jpmap .plabel{ font-size:17px; fill:var(--ink-2); letter-spacing:.04em;
+  paint-order:stroke; stroke:#FAF8F5; stroke-width:3.5; stroke-linejoin:round; }
+.jpmap a{ cursor:pointer; }
+.jpmap a:hover .pin, .jpmap a:focus-visible .pin{ fill:var(--accent-2); }
+.jpmap a:hover .plabel{ fill:var(--accent); }
+.jpmap a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.mapbox{ padding:var(--s5) var(--s5) var(--s3); }
+@media (max-width:700px){
+  .jpmap .plabel{ font-size:30px; stroke-width:6; }
+  .jpmap .pin{ r:9; stroke-width:2.4; }
+  .jpmap .pin-hit{ r:62; }
+  .jpmap .lead{ stroke-width:1.8; }
+  .mapbox{ padding:var(--s3) var(--s2) var(--s2); }
+}
+@media (min-width:700px){ .mapbox{ max-width:640px; } }
+
+/* 10 地 chip 列表(与地图联动,窄屏为主入口) */
+.chips{ display:flex; flex-wrap:wrap; gap:var(--s2); margin-top:var(--s4); }
+.chip{
+  position:relative; display:inline-block; padding:7px 14px;
+  font-size:14px; color:var(--ink-2); text-decoration:none;
+  border:1px solid var(--line-2); border-radius:var(--r-pill); background:#fff;
+}
+.chip::before{ content:""; position:absolute; left:0; right:0; top:50%; height:46px; transform:translateY(-50%); }
+.chip:hover{ border-color:var(--accent-line); color:var(--accent); background:var(--accent-soft); }
+
+/* ── 十地面板::target 打开(禁 JS 可用),JS 增强 ── */
+.panel{ display:none; position:fixed; inset:0; z-index:80; }
+.panel:target, .panel.open{ display:block; }
+.pmask{ position:absolute; inset:0; background:rgba(24,22,20,.5); }
+.pbox{
+  position:absolute; left:0; right:0; bottom:0; z-index:1;
+  max-height:88vh; overflow-y:auto; overscroll-behavior:contain;
+  background:var(--bg); border-radius:16px 16px 0 0;
+  padding:0 0 var(--s6); box-shadow:0 -12px 40px rgba(24,22,20,.25);
+}
+@media (min-width:700px){
+  .pbox{
+    left:50%; right:auto; top:50%; bottom:auto; transform:translate(-50%,-50%);
+    width:min(720px, 92vw); max-height:86vh; border-radius:16px;
+  }
+}
+.phead{
+  position:sticky; top:0; z-index:2; display:flex; align-items:center; justify-content:space-between;
+  padding:14px 18px; background:var(--bg); border-bottom:1px solid var(--line);
+}
+.phead h3{ font-size:18px; }
+.pclose{
+  position:relative; display:flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:50%; font-size:15px; text-decoration:none;
+  color:var(--ink-2); border:1px solid var(--line-2); background:#fff;
+}
+.pclose::before{ content:""; position:absolute; left:50%; top:50%; width:48px; height:48px; transform:translate(-50%,-50%); }
+.pstrip{
+  display:flex; gap:var(--s2); padding:var(--s3) 18px 0;
+  overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.pstrip::-webkit-scrollbar{ display:none; }
+.pstrip .pslot{ flex:0 0 72%; scroll-snap-align:start; border-radius:var(--r-m); overflow:hidden; display:block; }
+@media (min-width:700px){ .pstrip .pslot{ flex:0 0 46%; } }
+.pstrip .pslot img{ width:100%; height:100%; aspect-ratio:4/3; object-fit:cover; }
+.pstrip .slot-ph{ aspect-ratio:4/3; }
+.pstrip::after{ content:""; flex:0 0 10%; }
+.pbody{ padding:var(--s4) 18px 0; }
+.pbody h4{ font-size:13px; letter-spacing:.1em; color:var(--muted); margin:var(--s4) 0 var(--s2); }
+.pbody p{ font-size:15px; line-height:1.85; color:var(--ink-2); }
+.pbook{ margin-top:var(--s5); }
+.pbook a{
+  position:relative; display:inline-block; padding:10px 18px; border-radius:var(--r-pill);
+  background:var(--accent); color:#fff; text-decoration:none; font-size:14px;
+}
+.phnote{ margin:var(--s2) 18px 0; font-size:12px; color:var(--muted); letter-spacing:.04em; }
+#gallery .phnote{ margin:var(--s3) 0 0; }
+body:has(.panel:target), body:has(.panel.open){ overflow:hidden; }
+
+/* ── 业务四类:图 + 名 + 段落 ── */
+.types .type p{ font-size:13.5px; line-height:1.8; color:var(--ink-2); margin-top:4px; }
+.types b{ display:block; margin-top:var(--s2); font-size:15px; font-weight:600; }
+@media (min-width:700px){ .types{ grid-template-columns:repeat(2,1fr); gap:var(--s5); } }
+@media (min-width:1000px){ .types{ grid-template-columns:repeat(4,1fr); } }
+
+/* ── 关于 ── */
+.about-p{ max-width:720px; font-size:15px; line-height:1.9; color:var(--ink-2); margin-bottom:var(--s5); }
+
+/* ── 联系:邮箱为真链接 ── */
+.cc-mail{ border-color:var(--accent-line); background:var(--accent-soft); }
+.cc-mail:hover{ border-color:var(--accent); }
+.cc .mail{ font-size:13px; color:var(--accent); word-break:break-all; }

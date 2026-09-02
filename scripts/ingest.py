@@ -34,9 +34,9 @@ FOLDERS = {
     "首屏":"shouping",
     "京都":"jingdu", "东京":"dongjing", "大阪":"daban", "奈良":"nailiang",
     "福冈":"fuguang", "镰仓":"liancang", "富士山":"fushishan",
-    "札幌":"zhahuang", "小樽":"xiaozun",
-    "形态-和服":"xingtai-hefu", "形态-生活":"xingtai-shenghuo",
-    "形态-情侣":"xingtai-qinglv", "形态-家庭":"xingtai-jiating",
+    "伊豆半岛":"yidou", "札幌":"zhahuang", "小樽":"xiaozun",
+    "形态-和服":"xingtai-hefu", "形态-家庭常服":"xingtai-jiating",
+    "形态-婚纱":"xingtai-hunsha", "形态-会议":"xingtai-huiyi",
 }
 EXTS = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp", ".tif", ".tiff"}
 
@@ -112,16 +112,18 @@ def strip_and_resize(src, out_dir, pid):
     im.info = {}                               # 丢掉 icc_profile / exif / 注释等所有附带块
     sizes = {}
     os.makedirs(out_dir, exist_ok=True)
-    for tag, edge in (("2000", 2000), ("800", 800)):
+    for tag, edge in (("2000", 2000), ("800", 800), ("400", 400)):
         w, h = im.size
         s = min(1.0, float(edge) / max(w, h))
         nw, nh = max(1, int(round(w * s))), max(1, int(round(h * s)))
         r = im.resize((nw, nh), Image.LANCZOS) if s < 1.0 else im.copy()
         r.info = {}
+        jq = {"2000": 78, "800": 78, "400": 80}[tag]
+        wq = {"2000": 68, "800": 70, "400": 74}[tag]
         r.save(os.path.join(out_dir, "%s-%s.jpg" % (pid, tag)),
-               "JPEG", quality=82, optimize=True, progressive=True, exif=b"")
+               "JPEG", quality=jq, optimize=True, progressive=True, exif=b"")
         r.save(os.path.join(out_dir, "%s-%s.webp" % (pid, tag)),
-               "WEBP", quality=80, method=5)
+               "WEBP", quality=wq, method=5)
         sizes[tag] = (nw, nh)
     return sizes
 
