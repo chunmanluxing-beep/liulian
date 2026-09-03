@@ -83,19 +83,19 @@
  },
  "en": {
   "hero_s": "Portrait and event photography in ten cities and regions across Japan.",
-  "s2_p": "Arranged by location. Click any image to view.",
-  "s3_p": "Ten cities and regions. Click a place for details and photographs.",
-  "s4_p": "Four kinds of sessions, each carried out by local photographers.",
+  "s2_p": "Arranged by location — select any photograph to see it larger.",
+  "s3_p": "Ten cities and regions — select a place to read about it and see the work made there.",
+  "s4_p": "Four kinds of session, each handled by photographers based in the area.",
   "about_p": "Liulian Photography was founded in 2018 and works with over two hundred partner photographers across Japan. Its services cover kimono, family, wedding and event photography, in ten cities and regions including Kyoto, Tokyo and Osaka. Enquiries and bookings are handled by email and through Instagram.",
   "s6_h": "Booking and contact",
-  "s6_p": "For enquiries and bookings, write by email or message us on Instagram.",
+  "s6_p": "For enquiries and bookings, write to us by email or send a message on Instagram.",
   "foot_n": "Client photographs are shown with permission.",
   "title": "Liulian Photography · Portrait and event photography across Japan",
   "desc": "Founded in 2018, Liulian Photography works with over two hundred photographers across Japan, offering kimono, family, wedding and event photography in ten cities and regions.",
   "types": {
    "xingtai-hefu": {
     "name": "Kimono sessions",
-    "desc": "Set in historic districts and temple grounds. Dressing and hair styling are completed on the day before the session moves outdoors along a planned walking route. A natural choice for first-time visitors who want portraits in traditional dress."
+    "desc": "Set in historic districts and temple grounds. On the day, dressing and hair styling come first; the session then moves outdoors along a planned walking route. A natural choice for first-time visitors who want portraits in traditional dress."
    },
    "xingtai-jiating": {
     "name": "Family sessions",
@@ -103,7 +103,7 @@
    },
    "xingtai-hunsha": {
     "name": "Wedding portraits",
-    "desc": "Available in both Western dress and traditional wasou, set in gardens, along the coast, in old streets or against the mountains. Dress, location and timing are settled beforehand; the day itself follows the agreed route."
+    "desc": "Available in both Western dress and traditional Japanese wasō, set in gardens, along the coast, in old streets or against the mountains. Dress, location and timing are settled beforehand; the day itself follows the agreed route."
    },
    "xingtai-huiyi": {
     "name": "Event photography",
@@ -129,7 +129,7 @@
    "nailiang": {
     "name": "Nara",
     "culture": "Nara was the capital of ancient Japan. Todai-ji and Kasuga Taisha are World Heritage sites, and the deer of Nara Park wander freely among the paths. The historic quarter is compact and walkable, with maple colour and open lawns in autumn.",
-    "shoot": "Photographs with the deer are the classic Nara picture; early mornings are calm and uncrowded. The approach to Todai-ji and the stone lanterns of Kasuga Taisha suit kimono sessions well."
+    "shoot": "Photographs with the deer are the classic Nara shot; early mornings are calm and uncrowded. The approach to Todai-ji and the stone lanterns of Kasuga Taisha suit kimono sessions well."
    },
    "fushishan": {
     "name": "Mt. Fuji",
@@ -139,11 +139,11 @@
    "yidou": {
     "name": "Izu Peninsula",
     "culture": "The Izu Peninsula, in eastern Shizuoka, is known for its coastline and hot springs. The volcanic rock shore of Jogasaki, the old port streets of Shimoda and the early cherry blossom of Kawazu each have their own character.",
-    "shoot": "Coastal work centres on Jogasaki and the sunsets of western Izu; the Kawazu blossom season suits portraits among the trees. Distances are long, so sessions are grouped by side of the peninsula."
+    "shoot": "Coastal work centres on Jogasaki and the sunsets of western Izu; the Kawazu blossom season suits portraits among the trees. Distances are long, so sessions are grouped by one side of the peninsula or the other."
    },
    "liancang": {
     "name": "Kamakura",
-    "culture": "Kamakura was once the seat of Japan's first warrior government. The Great Buddha of Kotoku-in and Tsurugaoka Hachimangu are its landmark sites, and the Enoden line runs along the shore past the well-known seaside crossing near Kamakurakokomae.",
+    "culture": "Kamakura was once the seat of Japan's first warrior government. The Great Buddha of Kotoku-in and Tsurugaoka Hachimangu are its landmark sites, and the Enoden line runs along the shore past the well-known seaside crossing at Kamakura-Kokomae.",
     "shoot": "The Buddha, the Enoden line and the shore make three staple settings; in afternoon backlight the sea gains depth. The lanes around Hase are quiet and suit an unhurried pace."
    },
    "fuguang": {
