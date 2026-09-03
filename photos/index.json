@@ -512,19 +512,6 @@
    "placeholder": false
   },
   {
-   "id": "73b7e92393dd",
-   "sha": "73b7e92393dd55be31278816d81c87d1cc8d56f224862fbb98ff6b2a53563eed",
-   "origin": "inbox/jingdu/t1.jpg",
-   "src": "t1.jpg",
-   "fw": 1500,
-   "fh": 2000,
-   "tw": 600,
-   "th": 800,
-   "gw": 300,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
    "id": "c413b2ccf1b7",
    "sha": "c413b2ccf1b74122cca97e8e99d6af3db858f07d1e3f47964763c7d3038ad6d1",
    "origin": "inbox/jingdu/t2.jpg",
