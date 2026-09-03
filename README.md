@@ -123,3 +123,30 @@ cd ~/Projects/liulian-site && python3 -m http.server 8971
   入库沿 L1 管道:剥全部元数据 → 2000/800/400 三档 × WebP/JPG 双格式 → 哈希去重。
 - **联系**:邮箱 mailto(HTML 实体混淆);微信板块移除;GYG / Viator / 小红书仍为 link-ph 占位。
 - 桌面投放夹同步为 10 地 + 4 业务子夹。
+
+
+## L4(2026-09-03):华丽化重做 + 高清和服影像扩充 + 出口收口
+
+- **视觉**:深色沉浸重做 —— 墨黑暖底(#131110)衬和服的朱金白;单一金铜强调
+  (#C9A05F,仅用于细线/标题下划/按钮描边,不做大面积金渐变);标题衬线自托管子集
+  (SIL OFL:Noto Serif SC SemiBold 76KB + Cormorant Garamond wght560 37KB),
+  正文仍系统字体栈,**零外链**。子集流程见 `scripts/make_fonts.py` 与
+  `assets/fonts/charset.txt`(改标题文案后需重跑)。
+- **首屏**:全屏和服人像轮播 3 帧(纯 CSS 淡切,8s/帧;`prefers-reduced-motion`
+  下停在首帧)+ 衬线字标 + 金线 + 邮件 / Instagram 两枚描边按钮。
+- **作品精选**:编辑感错位网格(和服人像优先,每第 5 格横跨两列)。
+- **拍摄地区**:地图改深色版式、金色标点;十地面板改大图横滑 + 桌面文案分栏。
+- **业务四类**:大图卡片(主图 + 副图,容器定纵横比以免图片塌高),和服旅拍居首。
+- **性能**:离屏格子用 `content-visibility:auto` + `contain-intrinsic-size`,
+  首屏首载 727KB(390);整页首载 ≤1.6MB。
+- **动效**:滚动进场只动 `transform`,不动 `opacity` —— 任何浏览器/任何滚动位置
+  都不会把内容留在不可见状态。
+- **出口收口**:GetYourGuide / Viator / 小红书全部占位与文案删除;
+  联系仅 邮箱(HTML 实体混淆 mailto)+ Instagram(无跟踪参数,`rel=noopener`
+  新窗口);中英「关于」段改为「咨询与预订通过邮箱与 Instagram 进行」。
+- **影像高清硬门**(L4 新增,逐张执行):①**本地实际**长边 ≥2400px(不看源站
+  标称值 —— Openverse 的 rawpixel / StockSnap 端点只给 ≤1440px 渲染件,
+  探测无更大端点,故该渠道本轮零入站);②清晰度实测(拉普拉斯方差,灰度缩至
+  长边 1200 统一口径)+ 体积/像素比,数值偏低者开图复核,糊的拒收;
+  ③取检索结果里最大可用规格(Commons `iiurlwidth=3840`),不用缩略图端点;
+  ④2000 档一律由清晰原图缩放而来。逐张台账见 `CREDITS.md`。

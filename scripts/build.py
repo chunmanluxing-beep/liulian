@@ -10,7 +10,7 @@ import json, os, sys, html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
-from content import CITIES, TYPES, T, EMAIL, LABELS  # noqa: E402
+from content import CITIES, TYPES, T, EMAIL, INSTAGRAM, INSTAGRAM_LABEL, LABELS  # noqa: E402
 
 HILITE = sorted({p for _, _, _, prefs, *_ in CITIES for p in prefs})
 
@@ -89,27 +89,66 @@ def slot(loc, folder, photos, cls="", alt="", size="800", eager=False, sizes_att
             % (cls, T[loc]["ph_photo"], T[loc]["ph_photo"]))
 
 
+def hero_slides(loc, photos):
+    """全屏和服人像轮播:shouping 取至多 5 张;纯 CSS 淡切,reduced-motion 停在首帧。"""
+    items = photos.get("shouping", [])[:5]
+    if not items:
+        return ('<div class="hero-slides" data-n="1"><div class="hslide">'
+                '<div class="slot slot-ph" style="position:absolute;inset:0" role="img" '
+                'aria-label="%s">%s</div></div></div>' % (T[loc]["ph_photo"], T[loc]["ph_photo"]))
+    n = len(items)
+    cyc = max(1, n) * 8
+    out = ['<div class="hero-slides" data-n="%d" style="--hero-cycle:%ds">' % (n, cyc)]
+    for i, it in enumerate(items):
+        pic = picture(loc, "shouping", it, "2000", T[loc]["hero_t"], eager=(i == 0),
+                      sizes_attr="100vw")
+        st = ' style="animation-delay:%ds"' % (i * 8) if n > 1 else ""
+        out.append('<div class="hslide"%s>%s</div>' % (st, pic))
+    out.append("</div>")
+    return "".join(out)
+
+
 def gallery(loc, photos):
-    """作品网格:每地取前 2 张;灯箱页收全部入库照片。"""
-    flat = []
+    """作品网格:和服人像(zuopin + xingtai-hefu)为主、城市代表图穿插;
+    24–36 格,每第 5 格横跨两列;灯箱收全部入库照片。"""
+    kim, city = [], []
+    kname = "和服" if loc == "zh" else "Kimono"
+    for slug in ("zuopin", "xingtai-hefu"):
+        for it in photos.get(slug, []):
+            kim.append((slug, kname, it))
     for slug, zh, en, *_ in CITIES:
         for it in photos.get(slug, []):
-            flat.append((slug, zh if loc == "zh" else en, it))
+            city.append((slug, zh if loc == "zh" else en, it))
+    flat = kim + city
     if not flat:
         cells = "".join('<div class="slot slot-ph" role="img" aria-label="%s">%s</div>'
                         % (T[loc]["ph_photo"], T[loc]["ph_photo"]) for _ in range(8))
         return '<div class="grid">%s</div>' % cells, ""
-    per, seen = {}, []
-    for slug, place, it in flat:
-        per.setdefault(slug, 0)
-        if per[slug] < 2:
-            per[slug] += 1
-            seen.append((slug, place, it))
+    # 排布:3 和服 + 1 城市 循环(和服占比 ≥60%),上限 36
+    seen, ki, ci = [], 0, 0
+    percity = {}
+    while len(seen) < 36 and (ki < len(kim) or ci < len(city)):
+        for _ in range(3):
+            if ki < len(kim):
+                seen.append(kim[ki]); ki += 1
+        while ci < len(city):
+            slug = city[ci][0]
+            if percity.get(slug, 0) < 2:
+                percity[slug] = percity.get(slug, 0) + 1
+                seen.append(city[ci]); ci += 1
+                break
+            ci += 1
+        else:
+            if ki >= len(kim):
+                break
+    seen = seen[:36]
     cells = []
-    for slug, place, it in seen:
+    for i, (slug, place, it) in enumerate(seen):
         pid = "p-%s" % it["id"]
-        cells.append('<a class="slot" href="#%s" aria-label="%s">%s</a>'
-                     % (pid, place, picture(loc, slug, it, "400", place)))
+        wide = ' g-w' if i % 5 == 4 else ''
+        size = "800" if wide else "400"
+        cells.append('<a class="slot%s" href="#%s" aria-label="%s">%s</a>'
+                     % (wide, pid, place, picture(loc, slug, it, size, place)))
     boxes = lightboxes(loc, flat)
     return '<div class="grid">%s</div>' % "".join(cells), boxes
 
@@ -180,19 +219,31 @@ def render(loc):
                     % (slug, (zh if loc == "zh" else en))
                     for slug, zh, en, *_ in CITIES)
 
-    types_html = "".join(
-        '<div class="type">%s<b>%s</b><p>%s</p></div>'
-        % (slot(loc, slug, photos, alt=(zh if loc == "zh" else en), size="400"),
-           zh if loc == "zh" else en, dzh if loc == "zh" else den)
-        for slug, zh, en, dzh, den in TYPES)
+    tcells = []
+    for slug, zh, en, dzh, den in TYPES:
+        name = zh if loc == "zh" else en
+        items = photos.get(slug, [])[:3]
+        if items:
+            shots = "".join('<div class="slot">%s</div>'
+                            % picture(loc, slug, it, "800" if i == 0 else "400", name)
+                            for i, it in enumerate(items[:3]))
+            cls = "tshots " + {1: "one", 2: "two"}.get(len(items), "")
+            shots = '<div class="%s">%s</div>' % (cls, shots)
+        else:
+            shots = ('<div class="tshots one"><div class="slot slot-ph" role="img" '
+                     'aria-label="%s">%s</div></div>' % (t["ph_photo"], t["ph_photo"]))
+        tcells.append('<div class="type">%s<div class="tbody"><b>%s</b><p>%s</p></div></div>'
+                      % (shots, name, dzh if loc == "zh" else den))
+    types_html = "".join(tcells)
 
     about_stats = "".join('<li><b>%s</b>%s</li>' % (a, b) for a, b in t["about"])
 
     em = obfuscate(EMAIL)
-    ccs = ["".join(('<a class="cc cc-mail link-live" href="mailto:%s"><b>%s</b><span>%s</span>'
-                    '<span class="mail">%s</span></a>') % (em, t["email_label"], t["email_sub"], em))]
-    for key, label, sub in t["contacts"]:
-        ccs.append('<div class="cc link-ph"><b>%s</b><span>%s</span></div>' % (label, sub))
+    ccs = [('<a class="cc cc-mail link-live" href="mailto:%s"><b>%s</b><span>%s</span>'
+            '<span class="mail">%s</span></a>') % (em, t["email_label"], t["email_sub"], em),
+           ('<a class="cc cc-ig link-live" href="%s" target="_blank" rel="noopener">'
+            '<b>%s</b><span>%s</span><span class="ig">%s</span></a>')
+           % (INSTAGRAM, t["ig_label"], t["ig_sub"], INSTAGRAM_LABEL)]
 
     return """<!doctype html>
 <html lang="{lang}">
@@ -200,7 +251,7 @@ def render(loc):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#FAF8F5">
+<meta name="theme-color" content="#131110">
 <meta name="description" content="{desc}">
 <title>{title}</title>
 <link rel="alternate" hreflang="{alt_lang}" href="{other}">
@@ -215,15 +266,19 @@ def render(loc):
 </div></nav>
 <main>
 
-<section class="hero" id="top"><div class="wrap">
+<section class="hero" id="top">
   {hero_shot}
-  <h1 class="hero-t">{hero_t}</h1>
-  <p class="hero-s">{hero_s}</p>
-  <div class="cta">
-    <a class="btn btn-1 link-ph" role="link" aria-disabled="true">{cta1}</a>
-    <a class="btn btn-2 link-live" href="mailto:{em}">{cta2}</a>
-  </div>
-</div></section>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-inner"><div class="wrap">
+    <h1 class="hero-t">{hero_t}</h1>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="hero-s">{hero_s}</p>
+    <div class="cta">
+      <a class="btn btn-1 link-live" href="mailto:{em}">{cta1}</a>
+      <a class="btn btn-2 link-live" href="{ig}" target="_blank" rel="noopener">{cta2}</a>
+    </div>
+  </div></div>
+</section>
 
 <section id="gallery"><div class="wrap">
   <div class="sec-h"><h2>{s2_h}</h2><p>{s2_p}</p></div>
@@ -254,7 +309,7 @@ def render(loc):
 
 </main>
 <footer><div class="wrap foot">
-  <div class="langrow"><a href="{d}index.html" data-lang="zh"{cur_zh}>中文</a> · <a href="{d}en/index.html" data-lang="en"{cur_en}>EN</a> · <a href="{d}credits.html">{credits_link}</a></div>
+  <div class="langrow"><a href="{d}index.html" data-lang="zh"{cur_zh}>中文</a> · <a href="{d}en/index.html" data-lang="en"{cur_en}>EN</a> · <a href="{d}credits.html">{credits_link}</a> · <a href="{ig}" target="_blank" rel="noopener">Instagram</a></div>
   <div>{foot_c}</div>
   <div>{foot_n}</div>
 </div></footer>
@@ -268,9 +323,7 @@ def render(loc):
            other_lang=("en" if loc == "zh" else "zh"),
            alt_lang=("en" if loc == "zh" else "zh-Hans"),
            d=d, brand=t["brand"], nav=nav,
-           hero_shot=slot(loc, "shouping", photos, cls="hero-shot", alt=t["hero_t"],
-                          size="2000", eager=True,
-                          sizes_attr="(max-width: 700px) 100vw, min(1080px, 100vw)"),
+           hero_shot=hero_slides(loc, photos), ig=INSTAGRAM,
            hero_t=t["hero_t"], hero_s=t["hero_s"], cta1=t["cta1"], cta2=t["cta2"], em=em,
            s2_h=t["s2_h"], s2_p=t["s2_p"], grid=grid, gnote=gnote,
            s3_h=t["s3_h"], s3_p=t["s3_p"], map=svg_map(loc), map_lg=t["map_lg"], chips=chips,
@@ -290,6 +343,7 @@ def render_credits():
     name_of = {slug: zh for slug, zh, *_ in CITIES}
     name_of.update({slug: zh for slug, zh, *_ in TYPES})
     name_of["shouping"] = "首屏"
+    name_of["zuopin"] = "作品"
     for folder in sorted(photos):
         for it in photos[folder]:
             c = it.get("credit")
