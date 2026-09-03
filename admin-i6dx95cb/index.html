@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#131110">
+<title>流涟旅拍 · 上传</title>
+<style>
+:root{
+  --bg:#131110; --bg2:#1A1714; --card:#1E1A16;
+  --ink:#ECE5DA; --ink2:#CFC5B6; --muted:#95897A;
+  --line:#2C2620; --line2:#3D352B;
+  --gold:#C9A05F; --gold2:#E3C288; --goldline:rgba(201,160,95,.42);
+  --ok:#6FBF8B; --bad:#D9776A;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","PingFang SC","Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 72px}
+h1{font-size:20px;letter-spacing:.08em;margin:0}
+h2{font-size:15px;letter-spacing:.14em;color:var(--gold);margin:0 0 12px;text-transform:none}
+p{margin:0}
+a{color:var(--gold2)}
+.top{position:sticky;top:0;z-index:5;background:rgba(19,17,16,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topin{max-width:720px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:10px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--bad);flex:0 0 auto}
+.dot.on{background:var(--ok)}
+.sub{font-size:12px;color:var(--muted);margin-left:auto}
+section{border-top:1px solid var(--line);padding:26px 0}
+section:first-of-type{border-top:0}
+
+/* 触控:一律靠内边距/隐形扩展达到 ≥44,视觉尺寸不放大 */
+button,.btn{position:relative;font:inherit;font-size:15px;letter-spacing:.04em;
+  min-height:48px;padding:12px 22px;border-radius:999px;cursor:pointer;
+  background:transparent;border:1px solid var(--goldline);color:var(--gold2)}
+button:hover{border-color:var(--gold);background:rgba(201,160,95,.10)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.primary{border-color:var(--gold)}
+button.ghost{border-color:var(--line2);color:var(--ink2)}
+input,select,textarea{font:inherit;font-size:16px;width:100%;min-height:48px;
+  padding:11px 14px;border-radius:10px;background:var(--card);
+  border:1px solid var(--line2);color:var(--ink)}
+input:focus,select:focus{outline:2px solid var(--goldline);outline-offset:1px}
+label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px;letter-spacing:.06em}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.row>button{flex:1 1 auto;min-width:132px}
+
+details{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:0 16px}
+details[open]{padding-bottom:12px}
+summary{list-style:none;cursor:pointer;padding:16px 0;font-size:15px;color:var(--gold2);
+  position:relative;min-height:52px;display:flex;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"▾";margin-left:auto;color:var(--muted)}
+details[open] summary::after{content:"▴"}
+ol.steps{margin:0;padding-left:0;counter-reset:s;list-style:none}
+ol.steps>li{counter-increment:s;position:relative;padding:0 0 18px 40px;font-size:14.5px;color:var(--ink2)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:1px;
+  width:26px;height:26px;border-radius:50%;border:1px solid var(--goldline);
+  color:var(--gold2);font-size:13px;display:flex;align-items:center;justify-content:center}
+ol.steps b{color:var(--ink)}
+.path{display:inline-block;background:var(--card);border:1px solid var(--line2);
+  border-radius:6px;padding:1px 7px;font-size:13px;color:var(--gold2);margin:2px 2px}
+
+.drop{margin-top:14px;border:1px dashed var(--line2);border-radius:12px;
+  padding:26px 18px;text-align:center;color:var(--muted);font-size:14px;background:var(--bg2)}
+.drop.hot{border-color:var(--gold);color:var(--gold2)}
+.files{margin-top:14px;display:grid;gap:8px}
+.f{display:flex;align-items:center;gap:10px;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.f .n{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.f .s{color:var(--muted);font-size:12px;flex:0 0 auto}
+.f .st{flex:0 0 auto;font-size:12px;color:var(--muted)}
+.f.ok .st{color:var(--ok)} .f.bad .st{color:var(--bad)} .f.bad{border-color:rgba(217,119,106,.5)}
+.bar{height:3px;border-radius:2px;background:var(--line2);overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .25s ease}
+.note{margin-top:12px;font-size:13px;color:var(--muted)}
+.msg{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:14px;display:none}
+.msg.show{display:block}
+.msg.good{background:rgba(111,191,139,.10);border:1px solid rgba(111,191,139,.4);color:#B8E3C8}
+.msg.err{background:rgba(217,119,106,.10);border:1px solid rgba(217,119,106,.45);color:#F0BDB4}
+
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+@media (min-width:560px){.thumbs{grid-template-columns:repeat(5,1fr)}}
+.th{position:relative;border-radius:8px;overflow:hidden;background:var(--bg2);aspect-ratio:3/4}
+.th img{width:100%;height:100%;object-fit:cover;display:block}
+.th .tag{position:absolute;left:4px;top:4px;font-size:10px;letter-spacing:.06em;
+  padding:2px 6px;border-radius:4px;background:rgba(19,17,16,.78);color:var(--ink2)}
+.th .del{position:absolute;right:4px;bottom:4px;width:30px;height:30px;padding:0;
+  min-height:0;border-radius:50%;font-size:14px;line-height:1;
+  background:rgba(19,17,16,.82);border:1px solid var(--line2);color:var(--ink2)}
+.th .del::before{content:"";position:absolute;left:50%;top:50%;width:48px;height:48px;transform:translate(-50%,-50%)}
+.th .del:hover{border-color:var(--goldline);color:var(--gold2)}
+.th.gone{opacity:.32}
+.empty{margin-top:14px;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--line);padding:22px 0 0;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="topin">
+  <span class="dot" id="dot" aria-hidden="true"></span>
+  <h1>流涟旅拍 · 上传</h1>
+  <span class="sub" id="tokstate">未登录</span>
+</div></div>
+
+<div class="wrap">
+
+<!-- ① 令牌 -->
+<section>
+  <h2>第一步 · 令牌</h2>
+  <details id="guide">
+    <summary>怎样生成令牌(照着点三步,手机也能完成)</summary>
+    <ol class="steps">
+      <li><b>打开设置页。</b>在手机或电脑浏览器登录 GitHub,访问
+        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">
+        github.com/settings/personal-access-tokens/new</a><br>
+        (手动找的话:头像 → <span class="path">Settings</span> →
+        最下面 <span class="path">Developer settings</span> →
+        <span class="path">Personal access tokens</span> →
+        <span class="path">Fine-grained tokens</span> →
+        <span class="path">Generate new token</span>)</li>
+      <li><b>只勾这一个仓库,只给读写内容。</b>
+        名字随便填(例如 <span class="path">liulian-upload</span>);
+        有效期 <span class="path">Expiration</span> 选 <b>1 year</b>(一年);
+        <span class="path">Repository access</span> 选
+        <span class="path">Only select repositories</span> → 选中
+        <span class="path">liulian-inbox</span>;
+        <span class="path">Permissions</span> → <span class="path">Repository permissions</span> →
+        找到 <span class="path">Contents</span>,右边下拉选
+        <b><span class="path">Read and write</span></b>。其余一律不用动。</li>
+      <li><b>生成并粘贴。</b>拉到最底 → <span class="path">Generate token</span> →
+        页面上会出现一串以 <span class="path">github_pat_</span> 开头的字符 →
+        点右边的复制图标 → 回到本页粘进下面的框 → 按「保存令牌」。<br>
+        这串字符只显示一次,离开页面就看不到了;丢了就照上面再生成一个,旧的可以删掉。</li>
+    </ol>
+    <p class="note">令牌只保存在这台手机/电脑的浏览器里(localStorage),不会发到别处,
+      本页也不含任何密钥。换设备要重新粘一次。</p>
+  </details>
+
+  <div style="margin-top:14px">
+    <label for="tok">令牌(github_pat_… )</label>
+    <input id="tok" type="password" autocomplete="off" autocapitalize="off"
+           autocorrect="off" spellcheck="false" placeholder="粘贴到这里">
+  </div>
+  <div class="row">
+    <button class="primary" id="save">保存令牌</button>
+    <button class="ghost" id="clear">清除令牌</button>
+  </div>
+  <div class="msg" id="tokmsg"></div>
+</section>
+
+<!-- ② 上传 -->
+<section>
+  <h2>第二步 · 选板块、传文件</h2>
+  <label for="slug">放到哪个板块</label>
+  <select id="slug"></select>
+
+  <div class="drop" id="drop">
+    把照片拖到这里,或
+    <button class="ghost" id="pick" style="min-height:44px;padding:9px 18px;margin-top:8px">选择文件</button>
+    <input id="file" type="file" multiple accept="image/*,video/*" hidden>
+    <p class="note" id="limits">照片单个 ≤25MB;视频单个 ≤60MB。数量不限,建议每批 20 个以内。</p>
+  </div>
+
+  <div class="files" id="files"></div>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="row">
+    <button class="primary" id="up" disabled>开始上传</button>
+    <button class="ghost" id="reset">清空列表</button>
+  </div>
+  <div class="msg" id="upmsg"></div>
+</section>
+
+<!-- ③ 当前照片 -->
+<section>
+  <h2>第三步 · 看看站上现有的(可删)</h2>
+  <label for="vslug">查看板块</label>
+  <select id="vslug"></select>
+  <div class="thumbs" id="thumbs"></div>
+  <p class="empty" id="vempty">载入中…</p>
+  <p class="note">删除会写一条请求,几分钟后该图从站上移除。
+    带「示意」标记的是授权示意图 —— 该板块一旦有你的真实客片,示意图会自动退场,不必手动删。</p>
+  <div class="msg" id="delmsg"></div>
+</section>
+
+<footer>
+  上传后由收件仓自动处理:剥除全部元数据 → 生成三档尺寸两种格式 → 同步到站点,通常 2–5 分钟。<br>
+  本页不出现在网站任何导航里,也不允许搜索引擎收录。
+</footer>
+
+</div>
+
+<script>
+(function(){
+'use strict';
+var OWNER='chunmanluxing-beep', REPO='liulian-inbox', KEY='liulian.admin.token';
+var API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/';
+var SITE='../';           // 隐藏页在站点根下一层
+var MAX_IMG=25*1024*1024, MAX_VID=60*1024*1024;
+
+var SLUGS=[
+ ['_hero','首屏视频(只保留最新一支)'],
+ ['shouping','首屏照片'],
+ ['zuopin','作品精选'],
+ ['jingdu','京都'],['dongjing','东京'],['daban','大阪'],['nailiang','奈良'],
+ ['fushishan','富士山'],['yidou','伊豆半岛'],['liancang','镰仓'],
+ ['fuguang','福冈'],['zhahuang','札幌'],['xiaozun','小樽'],
+ ['xingtai-hefu','业务 · 和服旅拍'],['xingtai-changfu','业务 · 家庭常服'],
+ ['xingtai-hunsha','业务 · 婚纱'],['xingtai-huiyi','业务 · 会议活动摄影']
+];
+// 站内目录名与收件夹名的对应(仅「家庭常服」不同名)
+var SITE_OF={'xingtai-changfu':'xingtai-jiating'};
+
+var $=function(id){return document.getElementById(id);};
+function show(el,cls,txt){el.className='msg show '+cls;el.textContent=txt;}
+function hide(el){el.className='msg';}
+function kb(n){return n<1024*1024 ? Math.round(n/1024)+'KB' : (n/1048576).toFixed(1)+'MB';}
+
+/* ── 令牌 ── */
+function token(){ try{return localStorage.getItem(KEY)||'';}catch(e){return '';} }
+function paint(){
+  var t=token();
+  $('dot').className='dot'+(t?' on':'');
+  $('tokstate').textContent=t?'已保存令牌':'未登录';
+  if(!t) $('guide').open=true;
+}
+$('save').addEventListener('click',function(){
+  var v=$('tok').value.trim();
+  if(!v){ show($('tokmsg'),'err','请先粘贴令牌。'); return; }
+  try{ localStorage.setItem(KEY,v); }catch(e){ show($('tokmsg'),'err','这个浏览器不允许保存,请关掉「无痕模式」再试。'); return; }
+  $('tok').value=''; paint();
+  show($('tokmsg'),'good','已保存。正在验证…');
+  fetch('https://api.github.com/repos/'+OWNER+'/'+REPO,
+        {headers:{Authorization:'Bearer '+v,Accept:'application/vnd.github+json'}})
+    .then(function(r){
+      if(r.ok) show($('tokmsg'),'good','令牌可用,可以上传了。');
+      else if(r.status===401) show($('tokmsg'),'err','令牌无效或已过期,请重新生成一个。');
+      else if(r.status===404) show($('tokmsg'),'err','这个令牌没有 liulian-inbox 的权限:重新生成时记得在 Repository access 里选中它。');
+      else show($('tokmsg'),'err','验证失败(HTTP '+r.status+'),稍后再试。');
+    })
+    .catch(function(){ show($('tokmsg'),'err','网络不通,稍后再试。'); });
+});
+$('clear').addEventListener('click',function(){
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  $('tok').value=''; paint(); show($('tokmsg'),'good','已清除本机保存的令牌。');
+});
+
+/* ── 板块下拉 ── */
+SLUGS.forEach(function(s){
+  var a=document.createElement('option'); a.value=s[0]; a.textContent=s[1]; $('slug').appendChild(a);
+  if(s[0]!=='_hero'){
+    var b=document.createElement('option'); b.value=s[0]; b.textContent=s[1]; $('vslug').appendChild(b);
+  }
+});
+$('slug').value='jingdu'; $('vslug').value='jingdu';
+$('slug').addEventListener('change',function(){
+  var v=this.value==='_hero';
+  $('limits').textContent = v
+    ? '首屏视频:单个 ≤60MB;会自动压到 1280 宽、4MB 以内,超过 20 秒按前 20 秒截取。新传的会覆盖旧的。'
+    : '照片单个 ≤25MB;视频单个 ≤60MB。数量不限,建议每批 20 个以内。';
+});
+
+/* ── 选文件 ── */
+var queue=[];
+function render(){
+  var box=$('files'); box.innerHTML='';
+  queue.forEach(function(q,i){
+    var d=document.createElement('div'); d.className='f'+(q.state?' '+q.state:'');
+    d.innerHTML='<span class="n"></span><span class="s"></span><span class="st"></span>';
+    d.children[0].textContent=q.file.name;
+    d.children[1].textContent=kb(q.file.size);
+    d.children[2].textContent=q.msg||'待传';
+    box.appendChild(d);
+  });
+  $('up').disabled = queue.length===0 || !token();
+}
+function add(list){
+  for(var i=0;i<list.length;i++){
+    var f=list[i];
+    var isVid=/^video\//.test(f.type)||/\.(mp4|mov|m4v|webm)$/i.test(f.name);
+    var lim=isVid?MAX_VID:MAX_IMG;
+    if(f.size>lim){ queue.push({file:f,state:'bad',msg:'超过 '+kb(lim)+',未加入'}); continue; }
+    queue.push({file:f,state:'',msg:''});
+  }
+  render();
+}
+$('pick').addEventListener('click',function(){ $('file').click(); });
+$('file').addEventListener('change',function(){ add(this.files); this.value=''; });
+$('reset').addEventListener('click',function(){ queue=[]; render(); $('bar').style.width='0'; hide($('upmsg')); });
+var drop=$('drop');
+['dragenter','dragover'].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.add('hot');});});
+['dragleave','drop'].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.remove('hot');});});
+drop.addEventListener('drop',function(ev){ if(ev.dataTransfer&&ev.dataTransfer.files) add(ev.dataTransfer.files); });
+
+/* ── base64(分块,避免大文件爆栈)── */
+function b64(buf){
+  var bytes=new Uint8Array(buf), out='', CH=0x8000;
+  for(var i=0;i<bytes.length;i+=CH){
+    out+=String.fromCharCode.apply(null,bytes.subarray(i,i+CH));
+  }
+  return btoa(out);
+}
+function readB64(file){
+  return new Promise(function(res,rej){
+    var r=new FileReader();
+    r.onload=function(){ try{res(b64(r.result));}catch(e){rej(e);} };
+    r.onerror=function(){ rej(new Error('读取失败')); };
+    r.readAsArrayBuffer(file);
+  });
+}
+function safeName(n){
+  var base=n.replace(/[^\w.\-]+/g,'_').replace(/^_+/,'');
+  if(base.length>80) base=base.slice(-80);
+  return Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7)+'-'+base;
+}
+function put(path,content,message){
+  return fetch(API+path,{
+    method:'PUT',
+    headers:{Authorization:'Bearer '+token(),Accept:'application/vnd.github+json',
+             'Content-Type':'application/json'},
+    body:JSON.stringify({message:message,content:content})
+  }).then(function(r){
+    if(r.ok) return true;
+    return r.text().then(function(t){
+      var hint = r.status===401 ? '令牌无效或过期' :
+                 r.status===403 ? '令牌权限不足(Contents 需为 Read and write)' :
+                 r.status===404 ? '令牌没有勾选 liulian-inbox' :
+                 r.status===413 ? '文件太大,GitHub 拒收' : 'HTTP '+r.status;
+      throw new Error(hint+' '+t.slice(0,120));
+    });
+  });
+}
+
+$('up').addEventListener('click',function(){
+  if(!token()){ show($('upmsg'),'err','请先保存令牌。'); return; }
+  var todo=queue.filter(function(q){return q.state!=='bad'&&q.state!=='ok';});
+  if(!todo.length){ show($('upmsg'),'err','没有待上传的文件。'); return; }
+  var slug=$('slug').value, done=0, fail=0;
+  $('up').disabled=true; hide($('upmsg'));
+  (function step(i){
+    if(i>=todo.length){
+      $('up').disabled=false; render();
+      if(fail===0) show($('upmsg'),'good','已提交 '+done+' 个文件。数分钟后自动上站,刷新网站即可看到。');
+      else show($('upmsg'),'err','成功 '+done+' 个,失败 '+fail+' 个。失败的可以按「开始上传」再试一次。');
+      return;
+    }
+    var q=todo[i]; q.state=''; q.msg='上传中…'; render();
+    readB64(q.file).then(function(c){
+      var path=slug+'/'+safeName(q.file.name);
+      return put('inbox/'+path,c,'upload: '+path)
+        .catch(function(){ return put('inbox/'+path,c,'upload(retry): '+path); });  /* 失败重试一次 */
+    }).then(function(){
+      q.state='ok'; q.msg='已提交'; done++;
+    }).catch(function(e){
+      q.state='bad'; q.msg=String(e.message||e).slice(0,60); fail++;
+    }).then(function(){
+      $('bar').style.width=Math.round((i+1)/todo.length*100)+'%';
+      render(); step(i+1);
+    });
+  })(0);
+});
+
+/* ── 当前照片 ── */
+var IDX=null;
+function loadIndex(){
+  return fetch(SITE+'photos/index.json',{cache:'no-store'})
+    .then(function(r){ return r.ok?r.json():{}; }).catch(function(){ return {}; });
+}
+function paintThumbs(){
+  var slug=$('vslug').value, site=SITE_OF[slug]||slug;
+  var items=(IDX&&IDX[site])||[];
+  var box=$('thumbs'); box.innerHTML='';
+  $('vempty').style.display=items.length?'none':'block';
+  $('vempty').textContent='这个板块还没有照片。';
+  items.forEach(function(it){
+    var d=document.createElement('div'); d.className='th';
+    var im=document.createElement('img');
+    im.src=SITE+'photos/'+site+'/'+it.id+'-400.jpg';
+    im.loading='lazy'; im.alt='';
+    d.appendChild(im);
+    if(it.placeholder){
+      var t=document.createElement('span'); t.className='tag'; t.textContent='示意'; d.appendChild(t);
+    }
+    var b=document.createElement('button'); b.className='del'; b.type='button';
+    b.title='删除这张'; b.setAttribute('aria-label','删除这张'); b.textContent='✕';
+    b.addEventListener('click',function(){
+      if(!token()){ show($('delmsg'),'err','请先保存令牌。'); return; }
+      if(!window.confirm('确定把这张从网站上删除吗?')) return;
+      b.disabled=true;
+      put('inbox/_delete/'+it.id, btoa(it.id+'\n'), 'delete: '+it.id)
+        .then(function(){ d.classList.add('gone'); show($('delmsg'),'good','删除请求已提交,数分钟后从站上移除。'); })
+        .catch(function(e){ b.disabled=false; show($('delmsg'),'err','提交失败:'+(e.message||e)); });
+    });
+    d.appendChild(b);
+    box.appendChild(d);
+  });
+}
+$('vslug').addEventListener('change',paintThumbs);
+
+paint(); render();
+loadIndex().then(function(j){ IDX=j; paintThumbs(); });
+})();
+</script>
+</body>
+</html>

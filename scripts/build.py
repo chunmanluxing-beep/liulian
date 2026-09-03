@@ -16,11 +16,18 @@ HILITE = sorted({p for _, _, _, prefs, *_ in CITIES for p in prefs})
 
 
 def load_photos():
+    """读入照片索引。★退场规则★:某板块一旦有真客片(placeholder 非真),
+    该板块的示意图整批退场 —— 站上只出现真客片,「示意图片」标注随之消失。"""
     p = os.path.join(ROOT, "photos", "index.json")
     if not os.path.exists(p):
         return {}
     with open(p, encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    out = {}
+    for folder, items in data.items():
+        real = [it for it in items if not it.get("placeholder")]
+        out[folder] = real if real else items
+    return out
 
 
 def obfuscate(addr):
@@ -43,11 +50,11 @@ def svg_map(loc):
         line = ('<line class="lead" x1="%s" y1="%s" x2="%s" y2="%s"/>'
                 % (x, y, lx, ly)) if need_line else ""
         hits.append(
-            '<a href="#pn-%s" class="mappin" aria-label="%s">'
+            '<a href="#pn-%s" class="mappin notranslate" aria-label="%s">'
             '<title>%s</title>%s'
             '<circle class="pin-hit" cx="%s" cy="%s" r="34"/>'
             '<circle class="pin" cx="%s" cy="%s" r="6"/>'
-            '<text class="plabel" x="%s" y="%s" text-anchor="%s">%s</text></a>'
+            '<text class="plabel notranslate" x="%s" y="%s" text-anchor="%s">%s</text></a>'
             % (slug, name, name, line, x, y, x, y, lx, ly, anchor, name))
     aria = "日本拍摄地区分布图" if loc == "zh" else "Map of locations across Japan"
     return ('<svg class="jpmap" viewBox="0 0 %s %s" role="img" aria-label="%s" '
@@ -106,6 +113,29 @@ def hero_slides(loc, photos):
         out.append('<div class="hslide"%s>%s</div>' % (st, pic))
     out.append("</div>")
     return "".join(out)
+
+
+VIDEO_DIR = os.path.join(ROOT, "assets", "video")
+
+
+def hero_media(loc, photos):
+    """首屏:assets/video/hero-1280.mp4 存在则渲染视频,否则保持和服人像轮播。
+    视频靠原生属性自动播放,禁用 JS 同样生效;reduced-motion 下由 CSS 换成 poster 静帧。"""
+    mp4 = os.path.join(VIDEO_DIR, "hero-1280.mp4")
+    if not os.path.exists(mp4):
+        return hero_slides(loc, photos)
+    d = T[loc]["dir"]
+    alt = html.escape(T[loc]["hero_t"])
+    srcs = []
+    if os.path.exists(os.path.join(VIDEO_DIR, "hero-1280.webm")):
+        srcs.append('<source src="%sassets/video/hero-1280.webm" type="video/webm">' % d)
+    srcs.append('<source src="%sassets/video/hero-1280.mp4" type="video/mp4">' % d)
+    poster = "%sassets/video/hero-poster.jpg" % d
+    return ('<div class="hero-media">'
+            '<video class="hero-video" autoplay muted loop playsinline '
+            'preload="metadata" poster="%s" aria-label="%s" tabindex="-1">%s</video>'
+            '<img class="hero-still" src="%s" alt="%s" decoding="async">'
+            '</div>' % (poster, alt, "".join(srcs), poster, alt))
 
 
 def gallery(loc, photos):
@@ -191,7 +221,7 @@ def panels(loc, photos):
         out.append(
           '<section class="panel" id="pn-%s" role="dialog" aria-modal="false" aria-label="%s">'
           '<div class="pbox">'
-          '<header class="phead"><h3>%s</h3>'
+          '<header class="phead"><h3 class="notranslate" translate="no">%s</h3>'
           '<a class="pclose" href="#areas" aria-label="%s">✕</a></header>'
           '%s%s'
           '<div class="pbody">'
@@ -215,7 +245,7 @@ def render(loc):
     grid, boxes = gallery(loc, photos)
     gnote = ('<p class="phnote">%s</p>' % t["ph_note"]) if has_placeholder(photos) else ""
 
-    chips = "".join('<a class="chip" href="#pn-%s">%s</a>'
+    chips = "".join('<a class="chip notranslate" translate="no" href="#pn-%s">%s</a>'
                     % (slug, (zh if loc == "zh" else en))
                     for slug, zh, en, *_ in CITIES)
 
@@ -254,12 +284,14 @@ def render(loc):
 <meta name="theme-color" content="#131110">
 <meta name="description" content="{desc}">
 <title>{title}</title>
-<link rel="alternate" hreflang="{alt_lang}" href="{other}">
+<link rel="alternate" hreflang="zh-Hans" href="{href_zh}">
+<link rel="alternate" hreflang="en" href="{href_en}">
+<link rel="alternate" hreflang="x-default" href="{href_zh}">
 <link rel="stylesheet" href="{d}assets/css/site.css">
 </head>
 <body>
 <nav class="top"><div class="wrap topwrap">
-  <a class="brand" href="{d}index.html">{brand}</a>
+  <a class="brand notranslate" translate="no" href="{d}index.html">{brand}</a>
   <div class="topnav">{nav}
     <span class="langsw"><a href="{other}" data-lang="{other_lang}">{other_label}</a></span>
   </div>
@@ -270,7 +302,7 @@ def render(loc):
   {hero_shot}
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-inner"><div class="wrap">
-    <h1 class="hero-t">{hero_t}</h1>
+    <h1 class="hero-t notranslate" translate="no">{hero_t}</h1>
     <div class="hero-rule" aria-hidden="true"></div>
     <p class="hero-s">{hero_s}</p>
     <div class="cta">
@@ -297,7 +329,7 @@ def render(loc):
 </div></section>
 
 <section id="about"><div class="wrap">
-  <div class="sec-h"><h2>{s5_h}</h2></div>
+  <div class="sec-h"><h2 class="notranslate" translate="no">{s5_h}</h2></div>
   <p class="about-p">{about_p}</p>
   <div class="about"><ul>{about_stats}</ul></div>
 </div></section>
@@ -310,7 +342,7 @@ def render(loc):
 </main>
 <footer><div class="wrap foot">
   <div class="langrow"><a href="{d}index.html" data-lang="zh"{cur_zh}>中文</a> · <a href="{d}en/index.html" data-lang="en"{cur_en}>EN</a> · <a href="{d}credits.html">{credits_link}</a> · <a href="{ig}" target="_blank" rel="noopener">Instagram</a></div>
-  <div>{foot_c}</div>
+  <div class="notranslate" translate="no">{foot_c}</div>
   <div>{foot_n}</div>
 </div></footer>
 {panels}
@@ -321,9 +353,9 @@ def render(loc):
 """.format(lang=t["lang"], desc=html.escape(t["desc"]), title=html.escape(t["title"]),
            other=t["other"], other_label=t["other_label"],
            other_lang=("en" if loc == "zh" else "zh"),
-           alt_lang=("en" if loc == "zh" else "zh-Hans"),
+           href_zh=(d + "index.html"), href_en=(d + "en/index.html"),
            d=d, brand=t["brand"], nav=nav,
-           hero_shot=hero_slides(loc, photos), ig=INSTAGRAM,
+           hero_shot=hero_media(loc, photos), ig=INSTAGRAM,
            hero_t=t["hero_t"], hero_s=t["hero_s"], cta1=t["cta1"], cta2=t["cta2"], em=em,
            s2_h=t["s2_h"], s2_p=t["s2_p"], grid=grid, gnote=gnote,
            s3_h=t["s3_h"], s3_p=t["s3_p"], map=svg_map(loc), map_lg=t["map_lg"], chips=chips,

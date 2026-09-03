@@ -150,3 +150,35 @@ cd ~/Projects/liulian-site && python3 -m http.server 8971
   长边 1200 统一口径)+ 体积/像素比,数值偏低者开图复核,糊的拒收;
   ③取检索结果里最大可用规格(Commons `iiurlwidth=3840`),不用缩略图端点;
   ④2000 档一律由清晰原图缩放而来。逐张台账见 `CREDITS.md`。
+
+
+## L5(2026-09-03):上传后门(照片 + 视频) + 首屏视频位 + 品牌防误译
+
+### 首屏视频位
+- `scripts/build.py` 的 `hero_media()`:`assets/video/hero-1280.mp4` **存在则渲染视频**,
+  否则**原样保持三帧和服人像轮播**(不开天窗、不改一字)。
+- 规格:`<video autoplay muted loop playsinline preload="metadata" poster=…>` +
+  WebM(VP9)与 MP4(H.264)双源;覆盖层字标/定位句/两枚按钮位置与轮播版完全一致;
+  `prefers-reduced-motion: reduce` 时 CSS 隐藏 video、显示 poster 静帧;
+  自动播放靠原生属性,**禁用 JS 同样生效**;容器由 `.hero{min-height:92svh}` 撑住,
+  视频未加载不塌高。
+- 体积硬门(收件仓 ffmpeg 侧执行):MP4 ≤4MB、WebM ≤3.5MB、poster ≤200KB,
+  CRF 递降 + 码率兜底,超 20 秒按前 20 秒截取(首屏是循环背景)。
+
+### 上传后门
+- **私有收件仓** `chunmanluxing-beep/liulian-inbox`:业主把照片/视频丢进 `inbox/<板块>/`,
+  Action 自动剥元数据、转档、去重、写回本仓 `photos/` 与 `assets/video/`、跑 build、提交推送。
+  ★原始文件只留在私有仓,永不进本仓及本仓 git 历史。★
+- **隐藏上传页** `admin-i6dx95cb/index.html`:`noindex`,不在任何导航/sitemap 里;
+  纯前端零外部资源、不含任何密钥;令牌只存 `localStorage` 并提供「清除令牌」;
+  含令牌生成三步图文说明、板块下拉(含「首屏视频」)、多选/拖拽上传 + 进度条 +
+  失败重试一次、按板块看现有照片并删除。
+- **示意图退场**:`load_photos()` 里实现 —— 某板块只要出现 `placeholder` 非真的条目,
+  该板块示意图整批不渲染,「示意图片 · 客片持续更新」标注随之消失。
+  索引条目仍保留,可逆。`credits.html` 用同一份过滤视图,与站上所见一致。
+
+### 品牌防误译
+- 浏览器自动翻译会把「流涟旅拍 / Liulian」译成「六莲 / 刘莲摄影」。
+  给品牌字标、首屏大标题、「关于流涟」标题、页脚版权行、十地 chip、十地面板标题、
+  地图标点与地名文字加 `translate="no"` 与 `class="notranslate"`(中英两页同改)。
+- `hreflang`:两页各自列全 `zh-Hans` / `en` / `x-default`;EN 页 `<html lang="en">`。
