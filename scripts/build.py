@@ -12,6 +12,44 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from content import CITIES, TYPES, T, EMAIL, INSTAGRAM, INSTAGRAM_LABEL, LABELS  # noqa: E402
 
+
+def apply_site_json():
+    """★文案真源★:content/site.json 存在则覆盖 content.py 里的对应值,缺失则原样回落。
+    后台(Decap CMS)改的就是这个文件;结构性字符串、关于区三个数字、地图数据不受影响。"""
+    p = os.path.join(ROOT, "content", "site.json")
+    if not os.path.exists(p):
+        return False
+    with open(p, encoding="utf-8") as f:
+        data = json.load(f)
+    for loc in ("zh", "en"):
+        d = data.get(loc) or {}
+        for k, v in d.items():
+            if k in ("types", "cities"):
+                continue
+            if isinstance(v, str) and v.strip():
+                T[loc][k] = v
+    # 四类业务:(slug, zh, en, desc_zh, desc_en)
+    for i, tp in enumerate(TYPES):
+        slug = tp[0]
+        z = (data.get("zh", {}).get("types") or {}).get(slug) or {}
+        e = (data.get("en", {}).get("types") or {}).get(slug) or {}
+        TYPES[i] = (slug,
+                    z.get("name") or tp[1], e.get("name") or tp[2],
+                    z.get("desc") or tp[3], e.get("desc") or tp[4])
+    # 十地:(slug, zh, en, prefs, cul_zh, sho_zh, cul_en, sho_en);prefs 属数据,不外置
+    for i, c in enumerate(CITIES):
+        slug = c[0]
+        z = (data.get("zh", {}).get("cities") or {}).get(slug) or {}
+        e = (data.get("en", {}).get("cities") or {}).get(slug) or {}
+        CITIES[i] = (slug,
+                     z.get("name") or c[1], e.get("name") or c[2], c[3],
+                     z.get("culture") or c[4], z.get("shoot") or c[5],
+                     e.get("culture") or c[6], e.get("shoot") or c[7])
+    return True
+
+
+USING_SITE_JSON = apply_site_json()
+
 HILITE = sorted({p for _, _, _, prefs, *_ in CITIES for p in prefs})
 
 

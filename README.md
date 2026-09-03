@@ -152,33 +152,54 @@ cd ~/Projects/liulian-site && python3 -m http.server 8971
   ④2000 档一律由清晰原图缩放而来。逐张台账见 `CREDITS.md`。
 
 
-## L5(2026-09-03):上传后门(照片 + 视频) + 首屏视频位 + 品牌防误译
+## L5(2026-09-03):首屏视频位 + 品牌防误译
 
-### 首屏视频位
-- `scripts/build.py` 的 `hero_media()`:`assets/video/hero-1280.mp4` **存在则渲染视频**,
-  否则**原样保持三帧和服人像轮播**(不开天窗、不改一字)。
-- 规格:`<video autoplay muted loop playsinline preload="metadata" poster=…>` +
-  WebM(VP9)与 MP4(H.264)双源;覆盖层字标/定位句/两枚按钮位置与轮播版完全一致;
-  `prefers-reduced-motion: reduce` 时 CSS 隐藏 video、显示 poster 静帧;
-  自动播放靠原生属性,**禁用 JS 同样生效**;容器由 `.hero{min-height:92svh}` 撑住,
-  视频未加载不塌高。
-- 体积硬门(收件仓 ffmpeg 侧执行):MP4 ≤4MB、WebM ≤3.5MB、poster ≤200KB,
-  CRF 递降 + 码率兜底,超 20 秒按前 20 秒截取(首屏是循环背景)。
-
-### 上传后门
-- **私有收件仓** `chunmanluxing-beep/liulian-inbox`:业主把照片/视频丢进 `inbox/<板块>/`,
-  Action 自动剥元数据、转档、去重、写回本仓 `photos/` 与 `assets/video/`、跑 build、提交推送。
-  ★原始文件只留在私有仓,永不进本仓及本仓 git 历史。★
-- **隐藏上传页** `admin-i6dx95cb/index.html`:`noindex`,不在任何导航/sitemap 里;
-  纯前端零外部资源、不含任何密钥;令牌只存 `localStorage` 并提供「清除令牌」;
-  含令牌生成三步图文说明、板块下拉(含「首屏视频」)、多选/拖拽上传 + 进度条 +
-  失败重试一次、按板块看现有照片并删除。
-- **示意图退场**:`load_photos()` 里实现 —— 某板块只要出现 `placeholder` 非真的条目,
-  该板块示意图整批不渲染,「示意图片 · 客片持续更新」标注随之消失。
-  索引条目仍保留,可逆。`credits.html` 用同一份过滤视图,与站上所见一致。
-
-### 品牌防误译
-- 浏览器自动翻译会把「流涟旅拍 / Liulian」译成「六莲 / 刘莲摄影」。
+- **首屏视频位**:`build.py` 的 `hero_media()` —— `assets/video/hero-1280.mp4` 存在则渲染
+  `<video autoplay muted loop playsinline preload="metadata" poster=…>` + WebM(VP9)/
+  MP4(H.264) 双源,否则**原样保持三帧和服人像轮播**(不开天窗、文案位置一字不动)。
+  自动播放靠原生属性,**禁用 JS 同样生效**;`prefers-reduced-motion: reduce` 时 CSS
+  隐藏 video、显示 poster 静帧;容器由 `.hero{min-height:92svh}` 撑住,视频未加载不塌高。
+  体积硬门在私有仓 ffmpeg 侧执行:MP4 ≤4MB、WebM ≤3.5MB、poster ≤200KB。
+- **品牌防误译**:浏览器自动翻译会把「流涟旅拍 / Liulian」译成「六莲 / 刘莲摄影」。
   给品牌字标、首屏大标题、「关于流涟」标题、页脚版权行、十地 chip、十地面板标题、
-  地图标点与地名文字加 `translate="no"` 与 `class="notranslate"`(中英两页同改)。
+  地图标点与地名文字加 `translate="no"` 与 `class="notranslate"`(中英两页各 24 处)。
 - `hreflang`:两页各自列全 `zh-Hans` / `en` / `x-default`;EN 页 `<html lang="en">`。
+
+## L6(2026-09-03):后台上传与编辑(Decap CMS + Netlify Identity)
+
+### 架构
+```
+业主浏览器(邮箱密码登录)
+   └─ Decap CMS(托管在 Netlify,站点源 = 私有仓 liulian-inbox 的 cms/)
+        └─ Git Gateway 提交到 ★私有仓★ chunmanluxing-beep/liulian-inbox
+             ├─ inbox/<板块>/…      照片与视频原件(只留在私有仓)
+             └─ content/            文案与相册清单(真源)
+                  └─ GitHub Action(私有仓)
+                       ├─ 剥元数据 → 2000/800/400 × WebP+JPG → 内容哈希命名
+                       ├─ ffmpeg → 1280 宽 MP4/WebM + poster
+                       └─ 用部署密钥推送 ★本仓★(只收派生件)→ GitHub Pages 发布
+```
+- **官网地址不变**;**照片/视频原件永不进本仓,也不进本仓 git 历史**。
+- 本仓成为「生成产物 + 派生图」仓;文案与相册顺序的真源在私有仓 `content/`。
+
+### 文案外置
+- `content/site.json`(zh + en)承载业主可改的文案:首屏定位句、各区说明、关于段落、
+  联系区标题与说明、页脚句、SEO 标题与简介、四类业务(名称 + 介绍)、
+  十地(地名 + 地区文化 + 拍摄介绍)。
+- `scripts/build.py` 的 `apply_site_json()`:**存在则覆盖,缺失则回落 `content.py`**,
+  任何情况下都能构建。`scripts/export_site_json.py` 可从 `content.py` 重新导出一份种子。
+- **故意不外置**(避免后台误改):品牌名与导航等结构性字符串、关于区三个数字
+  (2018 / 200 余 / 10 —— 站上数字必须有出处)、地图高亮的都府县对应关系。
+- 等价性:接入 `site.json` 前后、以及移走 `site.json` 回落时,
+  `index.html` 与 `en/index.html` 均与 L5 产物**逐字节一致**。
+
+### 相册与顺序
+- 私有仓 `content/albums/<板块>.json` = `{"images": [原件路径, …]}`,**数组顺序即官网展示顺序**;
+  `content/hero.json` = `{"video": "原件路径"}`,留空则首屏回落三帧轮播。
+- 私有仓 `scripts/process.py` 是**幂等同步**:列表里有而本仓没有的 → 入库;
+  已有的 → 跳过;**本仓有而列表里没有的真图 → 删除**。
+  某板块一旦有真图,示意图由 `load_photos()` 自动整批退场、
+  「示意图片 · 客片持续更新」标注随之消失;板块清空则示意图回位。
+
+### 撤除
+- L5 的「浏览器粘 GitHub 令牌」上传页已整目录删除,本仓不再出现该路径。
