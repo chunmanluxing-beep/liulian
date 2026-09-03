@@ -52,6 +52,35 @@ USING_SITE_JSON = apply_site_json()
 
 HILITE = sorted({p for _, _, _, prefs, *_ in CITIES for p in prefs})
 
+SITE_URL = "https://chunmanluxing-beep.github.io/liulian/"
+
+
+def jsonld(loc):
+    """Organization 结构化数据。★只用站上已有事实:名称、简介、邮箱、Instagram、
+    成立年 2018、10 个服务地区。不写价格、不写评分、不编造任何数字。★"""
+    t = T[loc]
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": t["brand"],
+        "alternateName": T["en" if loc == "zh" else "zh"]["brand"],
+        "url": SITE_URL + ("en/" if loc == "en" else ""),
+        "logo": SITE_URL + "assets/og/og-%s.jpg" % loc,
+        "image": SITE_URL + "assets/og/og-%s.jpg" % loc,
+        "description": t["desc"],
+        "foundingDate": "2018",
+        "email": EMAIL,
+        "sameAs": [INSTAGRAM],
+        "areaServed": [{"@type": "Place", "name": (c[1] if loc == "zh" else c[2])}
+                       for c in CITIES],
+        "makesOffer": [{"@type": "Offer",
+                        "itemOffered": {"@type": "Service",
+                                        "name": (tp[1] if loc == "zh" else tp[2]),
+                                        "description": (tp[3] if loc == "zh" else tp[4])}}
+                       for tp in TYPES],
+    }
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
 
 def load_photos():
     """读入照片索引。★退场规则★:某板块一旦有真客片(placeholder 非真),
@@ -106,6 +135,9 @@ def has_placeholder(photos):
 
 def picture(loc, folder, it, size, alt, eager=False, sizes_attr=None):
     d = T[loc]["dir"]
+    # 授权示意图的 alt 统一标注,读屏与图片加载失败时都能看出这不是客片
+    if it.get("placeholder"):
+        alt = "%s · %s" % (T[loc]["alt_sample"], alt)
     lz = '' if eager else ' loading="lazy"'
     dims = {"2000": (it["fw"], it["fh"]), "800": (it["tw"], it["th"]),
             "400": (it.get("gw", it["tw"]), it.get("gh", it["th"]))}
@@ -322,10 +354,26 @@ def render(loc):
 <meta name="theme-color" content="#131110">
 <meta name="description" content="{desc}">
 <title>{title}</title>
+<link rel="canonical" href="{canonical}">
 <link rel="alternate" hreflang="zh-Hans" href="{href_zh}">
 <link rel="alternate" hreflang="en" href="{href_en}">
 <link rel="alternate" hreflang="x-default" href="{href_zh}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{brand}">
+<meta property="og:locale" content="{og_locale}">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{og_img}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{brand}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{og_img}">
 <link rel="stylesheet" href="{d}assets/css/site.css">
+<script type="application/ld+json">{jsonld}</script>
 </head>
 <body>
 <nav class="top"><div class="wrap topwrap">
@@ -392,6 +440,10 @@ def render(loc):
            other=t["other"], other_label=t["other_label"],
            other_lang=("en" if loc == "zh" else "zh"),
            href_zh=(d + "index.html"), href_en=(d + "en/index.html"),
+           canonical=(SITE_URL + ("en/" if loc == "en" else "")),
+           og_img=(SITE_URL + "assets/og/og-%s.jpg" % loc),
+           og_locale=("zh_CN" if loc == "zh" else "en_US"),
+           jsonld=jsonld(loc),
            d=d, brand=t["brand"], nav=nav,
            hero_shot=hero_media(loc, photos), ig=INSTAGRAM,
            hero_t=t["hero_t"], hero_s=t["hero_s"], cta1=t["cta1"], cta2=t["cta2"], em=em,
@@ -405,6 +457,29 @@ def render(loc):
            panels=panels(loc, photos), boxes=boxes,
            cur_zh=(' aria-current="page"' if loc == "zh" else ""),
            cur_en=(' aria-current="page"' if loc == "en" else ""))
+
+
+def render_sitemap():
+    pages = [(SITE_URL, "1.0"), (SITE_URL + "en/", "0.9"), (SITE_URL + "credits.html", "0.3")]
+    rows = []
+    for url, pri in pages:
+        alts = ('<xhtml:link rel="alternate" hreflang="zh-Hans" href="%s"/>'
+                '<xhtml:link rel="alternate" hreflang="en" href="%sen/"/>'
+                '<xhtml:link rel="alternate" hreflang="x-default" href="%s"/>'
+                % (SITE_URL, SITE_URL, SITE_URL)) if url != SITE_URL + "credits.html" else ""
+        rows.append("  <url><loc>%s</loc>%s<changefreq>monthly</changefreq>"
+                    "<priority>%s</priority></url>" % (url, alts, pri))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n%s\n</urlset>\n'
+            % "\n".join(rows))
+
+
+def render_robots():
+    return ("User-agent: *\n"
+            "Allow: /\n"
+            "\n"
+            "Sitemap: %ssitemap.xml\n" % SITE_URL)
 
 
 def render_credits():
@@ -468,7 +543,10 @@ def main():
     ph = load_photos()
     n = sum(len(v) for v in ph.values())
     npl = sum(1 for v in ph.values() for it in v if it.get("placeholder"))
-    print("built: index.html + en/index.html + credits.html  照片 %d(示意 %d)" % (n, npl))
+    for name, body in (("sitemap.xml", render_sitemap()), ("robots.txt", render_robots())):
+        with open(os.path.join(ROOT, name), "w", encoding="utf-8") as f:
+            f.write(body)
+    print("built: index.html + en/index.html + credits.html + sitemap.xml + robots.txt  照片 %d(示意 %d)" % (n, npl))
 
 
 if __name__ == "__main__":

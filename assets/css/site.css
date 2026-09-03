@@ -60,6 +60,15 @@ p{ margin:0; }
   font-family:var(--serif); letter-spacing:.06em; font-weight:600;
 }
 
+/* 键盘焦点环:深底上足够清楚,且不占布局(outline 不参与盒模型) */
+:focus-visible{
+  outline:2px solid var(--accent-2);
+  outline-offset:3px;
+  border-radius:3px;
+}
+.grid a.slot:focus-visible, .pstrip .pslot:focus-visible{ outline-offset:2px; }
+.hero-video:focus{ outline:none; }
+
 /* ── 顶部条 ── */
 .top{
   position:sticky; top:0; z-index:40;

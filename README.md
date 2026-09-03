@@ -203,3 +203,45 @@ cd ~/Projects/liulian-site && python3 -m http.server 8971
 
 ### 撤除
 - L5 的「浏览器粘 GitHub 令牌」上传页已整目录删除,本仓不再出现该路径。
+
+
+## L7(2026-09-03):弱板块补图 + 分享卡与 SEO + 后台防呆闸门 + 可访问性打磨
+
+### 弱板块补图(示意图 82 → 96)
+- 会议活动摄影 1 → **6**、家庭常服 1 → **5**、和服旅拍 3 → **5**、作品精选 4 → **6**、京都 10 → **11**。
+- 沿 L4 素材铁律与高清硬门:**本地实际**长边 ≥2400px(不信源站标称值)+
+  拉普拉斯方差实测 + 逐张开图评分 ≥8 + 同一作者 ≤3 张 + 许可仅 CC0/PD/CC-BY。
+- 新入库 14 张一律 `placeholder:true` —— **授权示意图不走 `content/albums`**
+  (走那条路会被标成 `placeholder:false`,即冒充客片,违反「示意图片不得标为客片」)。
+- 逐张台账(来源/作者/许可/源图长边/清晰度值)见 `CREDITS.md`,96 条。
+
+### 分享卡与 SEO
+- `assets/og/og-zh.jpg`、`og-en.jpg`:1200×630,各 221KB。由站内评分最高的
+  和服人像裁切 + 压暗 + 叠品牌字标与 `site.json` 的定位句合成;**产物是纯 JPEG,
+  零外部资源**(字体只在构建期本地渲染)。
+- 两页 head:`canonical` + 9 个 `og:*` + 4 个 `twitter:*`(`summary_large_image`)。
+- `sitemap.xml`(`/`、`/en/`、`/credits.html`,前两条带三向 `hreflang`)与
+  `robots.txt`(官网 `Allow: /` + Sitemap 行;★后台站点保持 noindex 不变★),
+  均由 `build.py` 生成。
+- `Organization` JSON-LD:只含名称/URL/logo/简介/`foundingDate:2018`/邮箱/
+  Instagram `sameAs`/10 个 `areaServed`/4 个 `makesOffer` ——
+  **无价格、无评分、无编造数字**;内联,不产生外部请求。
+
+### 可访问性
+- 对比度按 WCAG 公式实算 16 组,**0 项不达标**(最低 5.05),因此未改任何颜色。
+- 两页各 193 张 `<img>` 全部有 alt;示意图 alt 统一为「示意图片 · <板块>」/
+  「Sample image · <board>」;装饰元素 `aria-hidden`。
+- 新增全局 `:focus-visible` 焦点环(金亮 2px + 3px offset);Tab 前 30 个可聚焦
+  元素**无焦点环者 0**;Enter 开面板/灯箱、Esc 关闭均实测通过。
+- 新增 1920×1080 与 2560×1440 复验:横向溢出 0、放大超 1.6 倍的图 0。
+
+### 英文润色
+改 9 处生硬直译,**事实与数字零变动**。其中修掉一处歧义误译:
+和服旅拍原为 "…completed **on the day before** the session moves outdoors"
+(会被读成「前一天」,与中文「拍摄当日先完成着装」相反),
+改为 "On the day, dressing and hair styling come first; the session then moves outdoors"。
+
+### 后台防呆闸门(在私有仓)
+`scripts/precheck.py` 在任何处理之前校验文案/16 个相册/首屏视频的 JSON 与原件引用,
+不通过即红灯且**公开仓根本不会被 clone**,并自动开中文 Issue 指明「哪个文件哪一项、
+怎么改回来」。已用故意写坏的 JSON 实测通过(公开仓 HEAD 前后不变)。
