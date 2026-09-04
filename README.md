@@ -263,3 +263,18 @@ cd ~/Projects/liulian-site && python3 -m http.server 8971
 (`index.html` / `en/index.html` / `credits.html` / `sitemap.xml` / `robots.txt`)里
 命中数均为 **0**(线上抓取复核同样为 0);后台站点自身也保持
 `X-Robots-Tag: noindex, nofollow, noarchive`。具体域名只写在私有仓 README 里。
+
+## L10(2026-09-05):后台整套换成自建(本仓无产物改动,记录在此备查)
+
+业主裁决:Decap CMS + Netlify Identity + Git Gateway 那一套体验不要了。
+后台改成**自写的一页**——打开输账号密码,直接是照片墙,能传、能删、能拖动排序,
+首屏视频与文字也在同一页改;界面中文、深色金铜、与本站同一套令牌,**零第三方 JS、零外链**。
+
+- 内容真源、同步 Action、剥元数据 / 三档派生 / 推本仓 / Pages 发布这条链路
+  **原样未动** —— 本轮只换了「人怎么把内容写进私有仓」这一段。
+- 后台写操作经服务端函数用 GitHub API 提交到私有仓,前端拿不到任何令牌。
+- 具体实现、接口清单、安全措施与重置密码办法,写在私有仓 README 的 L10 章。
+
+★本仓(公开官网仓)仍不含任何后台地址★ —— 后台域名与 `netlify` 字样在站点产物
+(`index.html` / `en/index.html` / `credits.html` / `sitemap.xml` / `robots.txt`)里
+命中数均为 **0**。
