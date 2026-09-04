@@ -245,3 +245,19 @@ cd ~/Projects/liulian-site && python3 -m http.server 8971
 `scripts/precheck.py` 在任何处理之前校验文案/16 个相册/首屏视频的 JSON 与原件引用,
 不通过即红灯且**公开仓根本不会被 clone**,并自动开中文 Issue 指明「哪个文件哪一项、
 怎么改回来」。已用故意写坏的 JSON 实测通过(公开仓 HEAD 前后不变)。
+
+## L8(2026-09-04):后台登录彻底修复(本仓无改动,记录在此备查)
+
+后台(Decap CMS,私有仓 `liulian-inbox` 的 `cms/`,发布在 Netlify)此前**无法完成设密码**,
+业主两次尝试都卡住。根因与修法都在私有仓 README 的 L8 章,这里只留一句结论:
+
+- Netlify 邮件里的令牌挂在网址 `#` 后面;根页的 `meta refresh` 跳转会把它丢掉,
+  而 `/admin/` 上的 Decap 是 hash 路由,会把 `#recovery_token=…` 改写成 `#/recovery_token=…`,
+  于是 `netlify-identity-widget` 永远认不出令牌。
+- 修法:新增独立的 `/set-password/` 页(★只加载 identity widget,绝不加载 Decap★),
+  根页与 `/admin/` 都在**任何脚本之前**把带令牌的 hash 原样转过去,
+  并把 Netlify Identity 的四类邮件链接(`invite / confirmation / recovery / email_change`)
+  直接指向 `/set-password/`。
+
+★本仓(公开官网仓)不含任何后台地址★ —— `grep -ri "liulian-admin\|netlify"` 在站点产物里
+命中数为 0,后台站点自身也保持 `X-Robots-Tag: noindex, nofollow, noarchive`。
