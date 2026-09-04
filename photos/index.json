@@ -499,19 +499,6 @@
  ],
  "jingdu": [
   {
-   "id": "7ff8fb314ff8",
-   "sha": "7ff8fb314ff84729b80a0ab7569bd49e4e7c2813fc68af411607ff9be28dce47",
-   "origin": "inbox/jingdu/L8-e2e-test.jpg",
-   "src": "L8-e2e-test.jpg",
-   "fw": 2000,
-   "fh": 1333,
-   "tw": 800,
-   "th": 533,
-   "gw": 400,
-   "gh": 267,
-   "placeholder": false
-  },
-  {
    "id": "1fe8f1371abb",
    "sha": "1fe8f1371abbfba1e2bee2040c19c85830cb19c20137a9741effdc9ec80a7469",
    "src": "b71f1a33afe8.jpg",
