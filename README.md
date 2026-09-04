@@ -259,5 +259,7 @@ cd ~/Projects/liulian-site && python3 -m http.server 8971
   并把 Netlify Identity 的四类邮件链接(`invite / confirmation / recovery / email_change`)
   直接指向 `/set-password/`。
 
-★本仓(公开官网仓)不含任何后台地址★ —— `grep -ri "liulian-admin\|netlify"` 在站点产物里
-命中数为 0,后台站点自身也保持 `X-Robots-Tag: noindex, nofollow, noarchive`。
+★本仓(公开官网仓)不含任何后台地址★ —— 后台域名与 `netlify` 字样在站点产物
+(`index.html` / `en/index.html` / `credits.html` / `sitemap.xml` / `robots.txt`)里
+命中数均为 **0**(线上抓取复核同样为 0);后台站点自身也保持
+`X-Robots-Tag: noindex, nofollow, noarchive`。具体域名只写在私有仓 README 里。
