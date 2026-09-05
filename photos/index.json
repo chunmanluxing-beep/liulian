@@ -499,19 +499,6 @@
  ],
  "jingdu": [
   {
-   "id": "f8431410f54b",
-   "sha": "f8431410f54bd7ee8d8994399bfbe8cfc0af0329b052195d46a6184edbe5284e",
-   "origin": "inbox/jingdu/20260905-141241-oykw.jpg",
-   "src": "20260905-141241-oykw.jpg",
-   "fw": 2000,
-   "fh": 1500,
-   "tw": 800,
-   "th": 600,
-   "gw": 400,
-   "gh": 300,
-   "placeholder": false
-  },
-  {
    "id": "aa3d2a0edb6f",
    "sha": "aa3d2a0edb6fac4e3720db4ccba45e759a421e3c8dc15174ea2adce5c4f8d465",
    "origin": "inbox/jingdu/20260905-141248-a64j.jpg",
