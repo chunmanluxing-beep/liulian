@@ -499,32 +499,6 @@
  ],
  "jingdu": [
   {
-   "id": "aa3d2a0edb6f",
-   "sha": "aa3d2a0edb6fac4e3720db4ccba45e759a421e3c8dc15174ea2adce5c4f8d465",
-   "origin": "inbox/jingdu/20260905-141248-a64j.jpg",
-   "src": "20260905-141248-a64j.jpg",
-   "fw": 2000,
-   "fh": 1333,
-   "tw": 800,
-   "th": 533,
-   "gw": 400,
-   "gh": 267,
-   "placeholder": false
-  },
-  {
-   "id": "2c7e3244b90b",
-   "sha": "2c7e3244b90ba5820fad2bc577dc49e48720ff887838aced5b240449b228ae3f",
-   "origin": "inbox/jingdu/20260905-141306-wrdh.jpg",
-   "src": "20260905-141306-wrdh.jpg",
-   "fw": 2000,
-   "fh": 1500,
-   "tw": 800,
-   "th": 600,
-   "gw": 400,
-   "gh": 300,
-   "placeholder": false
-  },
-  {
    "id": "1fe8f1371abb",
    "sha": "1fe8f1371abbfba1e2bee2040c19c85830cb19c20137a9741effdc9ec80a7469",
    "src": "b71f1a33afe8.jpg",
