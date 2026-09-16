@@ -454,32 +454,6 @@
    "placeholder": false
   },
   {
-   "id": "82fd1e7c17d6",
-   "sha": "82fd1e7c17d6deda4a8398ee4a5e02a73fc735627dc2700e6137d3ce0edd3c5b",
-   "origin": "inbox/fuguang/20260916-154413-y560.jpg",
-   "src": "20260916-154413-y560.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
-   "id": "3e9199811a4e",
-   "sha": "3e9199811a4ee0ddda0b11c1e922e304b0b66c07c1876ba7a147d1fdadb13ca9",
-   "origin": "inbox/fuguang/20260916-154417-130z.jpg",
-   "src": "20260916-154417-130z.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
    "id": "2f6948cfbc05",
    "sha": "2f6948cfbc0552c242974bcd9c60e9aa4d90de67d89183b0bc23e4d54df902dc",
    "origin": "inbox/fuguang/20260916-154423-rajr.jpg",
@@ -523,19 +497,6 @@
    "sha": "d994e2edc518f2618a0f43f17d94c917d458e4dce5311599a5cb57fe0d3c2c67",
    "origin": "inbox/fuguang/20260916-154433-qhpd.jpg",
    "src": "20260916-154433-qhpd.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
-   "id": "5dce31db1f3f",
-   "sha": "5dce31db1f3f2d78fa62dcdbd212aaf612adb2748de28c135bad188fdbb2fb29",
-   "origin": "inbox/fuguang/20260916-154436-zx9p.jpg",
-   "src": "20260916-154436-zx9p.jpg",
    "fw": 1333,
    "fh": 2000,
    "tw": 533,
