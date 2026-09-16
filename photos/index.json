@@ -499,6 +499,19 @@
  ],
  "jingdu": [
   {
+   "id": "75fb6d11b718",
+   "sha": "75fb6d11b7184122717f32c5fcea7dc4efebdce93518f7bb19dbc05208c686fc",
+   "origin": "inbox/jingdu/20260916-150827-gdm4.jpg",
+   "src": "20260916-150827-gdm4.jpg",
+   "fw": 1333,
+   "fh": 2000,
+   "tw": 533,
+   "th": 800,
+   "gw": 267,
+   "gh": 400,
+   "placeholder": false
+  },
+  {
    "id": "1fe8f1371abb",
    "sha": "1fe8f1371abbfba1e2bee2040c19c85830cb19c20137a9741effdc9ec80a7469",
    "src": "b71f1a33afe8.jpg",
