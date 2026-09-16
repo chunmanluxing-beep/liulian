@@ -1,6 +1,19 @@
 {
  "daban": [
   {
+   "id": "7f9914a5e884",
+   "sha": "7f9914a5e884c67e9ca18685cebcc26dbaffaf7dcd41077a55412ae2e01c53fd",
+   "origin": "inbox/daban/20260916-153200-us6x.jpg",
+   "src": "20260916-153200-us6x.jpg",
+   "fw": 1333,
+   "fh": 2000,
+   "tw": 533,
+   "th": 800,
+   "gw": 267,
+   "gh": 400,
+   "placeholder": false
+  },
+  {
    "id": "89bbea6df804",
    "sha": "89bbea6df804d2ed231c0e6aada65486b06336025f6989222238b1fecf3a3fa3",
    "src": "73da607286e4.jpg",
