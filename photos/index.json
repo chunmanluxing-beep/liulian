@@ -2431,6 +2431,19 @@
  ],
  "yidou": [
   {
+   "id": "26186dcfe012",
+   "sha": "26186dcfe012d73f0b7296e9b733ba19fa78aa8aba9a9a7768cb0af2eb4146d7",
+   "origin": "inbox/yidou/20260916-153722-dihi.jpg",
+   "src": "20260916-153722-dihi.jpg",
+   "fw": 1333,
+   "fh": 2000,
+   "tw": 533,
+   "th": 800,
+   "gw": 267,
+   "gh": 400,
+   "placeholder": false
+  },
+  {
    "id": "4f2952b8cf27",
    "sha": "4f2952b8cf27364ccb27cb95b21049c8b82dfea264829765352b606ccfb7ec58",
    "src": "b552e1e8f516.jpg",
