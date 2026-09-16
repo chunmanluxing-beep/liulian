@@ -831,6 +831,19 @@
  ],
  "fuguang": [
   {
+   "id": "9d2c3fac2851",
+   "sha": "9d2c3fac285168ba5bedfaad3f28b6b8baf8fa66d25cc99d464bad838138d229",
+   "origin": "inbox/fuguang/20260916-154408-picw.jpg",
+   "src": "20260916-154408-picw.jpg",
+   "fw": 1333,
+   "fh": 2000,
+   "tw": 533,
+   "th": 800,
+   "gw": 267,
+   "gh": 400,
+   "placeholder": false
+  },
+  {
    "id": "20f997d962a6",
    "sha": "20f997d962a615ac91213a5d72030f0542c281bf3ff6fe207a094bc0f4fa9979",
    "src": "1fd4c38edc2b.jpg",
