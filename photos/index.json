@@ -914,7 +914,21 @@
   }
  ],
  "xingtai-huiyi": [],
- "xingtai-hunsha": [],
+ "xingtai-hunsha": [
+  {
+   "id": "9cc6ff5bfec3",
+   "sha": "9cc6ff5bfec390bf7e5990ed7ef41d7e4272ea7c74d211b3a54386b1d0d2ef92",
+   "origin": "inbox/xingtai-hunsha/20260917-154910-bsmy.jpg",
+   "src": "20260917-154910-bsmy.jpg",
+   "fw": 1333,
+   "fh": 2000,
+   "tw": 533,
+   "th": 800,
+   "gw": 267,
+   "gh": 400,
+   "placeholder": false
+  }
+ ],
  "xingtai-jiating": [],
  "yidou": [],
  "zhahuang": [],
