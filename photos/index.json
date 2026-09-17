@@ -181,19 +181,6 @@
  ],
  "dongjing": [
   {
-   "id": "41558fd4e3d0",
-   "sha": "41558fd4e3d080c248f122d0bfc661b9745af93bf83e4c391b5a1bf337467a05",
-   "origin": "inbox/dongjing/20260916-151728-ptuo.jpg",
-   "src": "20260916-151728-ptuo.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
    "id": "bd53e192fda1",
    "sha": "bd53e192fda170bfabe462f0d579e7d9a2d5caa79350c94f75854d6283315a5e",
    "origin": "inbox/dongjing/20260916-155504-n0g8.jpg",
