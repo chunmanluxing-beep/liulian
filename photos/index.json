@@ -81,8 +81,8 @@
   {
    "id": "25bbdd1e0d1f",
    "sha": "25bbdd1e0d1f31f158dc7bdc3d3d4eefa3ebef48da106df6d3992b623804d2d2",
-   "origin": "inbox/daban/20260916-155119-0z51.jpg",
-   "src": "20260916-155119-0z51.jpg",
+   "origin": "inbox/daban/20260916-154218-vymh.jpg",
+   "src": "20260916-154218-vymh.jpg",
    "fw": 2000,
    "fh": 1333,
    "tw": 800,
@@ -94,8 +94,8 @@
   {
    "id": "87d4aa0229ef",
    "sha": "87d4aa0229ef917b21d158be0b8b7bf5af1fcaf4c992b4d4e5c3b24c5e7dfa57",
-   "origin": "inbox/daban/20260916-155152-z1zr.jpg",
-   "src": "20260916-155152-z1zr.jpg",
+   "origin": "inbox/daban/20260916-154248-5639.jpg",
+   "src": "20260916-154248-5639.jpg",
    "fw": 2000,
    "fh": 1333,
    "tw": 800,
@@ -116,7 +116,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Nishinomaru_Garden_Osaka_Castle01s5s3200.jpg",
     "title": "Nishinomaru Garden Osaka Castle01s5s3200.jpg",
@@ -395,7 +395,7 @@
    "gh": 225,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Minato_City,_Tokyo,_Japan.jpg",
     "title": "Minato City, Tokyo, Japan.jpg",
@@ -415,7 +415,7 @@
    "gh": 400,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Five-storied_Pagoda_of_Sensoji_Temple_in_Tokyo,_20240824_1103_5615.jpg",
     "title": "Five-storied Pagoda of Sensoji Temple in Tokyo, 20240824 1103 5615.jpg",
@@ -576,7 +576,7 @@
    "gh": 300,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Hakata_yatai_and_yatai_food_-_2024_Sept_24_various_11_29_33_450000.jpeg",
     "title": "Hakata yatai and yatai food - 2024 Sept 24 various 11 29 33 450000.jpeg",
@@ -596,7 +596,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Nakasu_Yatai_Stalls_(19979437930).jpg",
     "title": "Nakasu Yatai Stalls (19979437930).jpg",
@@ -616,7 +616,7 @@
    "gh": 300,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Hakata_yatai_and_yatai_food_-_2024_Sept_24_various_11_27_34_241000.jpeg",
     "title": "Hakata yatai and yatai food - 2024 Sept 24 various 11 27 34 241000.jpeg",
@@ -636,7 +636,7 @@
    "gh": 300,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Hakata_yatai_and_yatai_food_-_2024_Sept_24_various_11_28_56_889000.jpeg",
     "title": "Hakata yatai and yatai food - 2024 Sept 24 various 11 28 56 889000.jpeg",
@@ -1329,7 +1329,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": true,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:A_woman_and_daughter_in_kimono_at_the_Monkey_Temple_in_Kyoto_(53621315785).jpg",
     "title": "A woman and daughter in kimono at the Monkey Temple in Kyoto (53621315785).jpg",
@@ -1389,7 +1389,7 @@
    "gh": 400,
    "placeholder": true,
    "kimono": true,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Arashiyama_Kimono_Forest_2023-01-03_1.jpg",
     "title": "Arashiyama Kimono Forest 2023-01-03 1.jpg",
@@ -1409,7 +1409,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Hankyu_Arashiyama_Station_sakura_20201-04-03.jpg",
     "title": "Hankyu Arashiyama Station sakura 20201-04-03.jpg",
@@ -1429,7 +1429,7 @@
    "gh": 300,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Geisha_@_Kyoto_(13310611173).jpg",
     "title": "Geisha @ Kyoto (13310611173).jpg",
@@ -1453,7 +1453,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Gion_koubu_nyokouba.jpg",
     "title": "Gion koubu nyokouba.jpg",
@@ -1567,7 +1567,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Hase-dera_(3801486791).jpg",
     "title": "Hase-dera (3801486791).jpg",
@@ -1587,7 +1587,7 @@
    "gh": 225,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Hase-dera_Temple,_Kamakura,_Japan_(14645090803).jpg",
     "title": "Hase-dera Temple, Kamakura, Japan (14645090803).jpg",
@@ -1607,7 +1607,7 @@
    "gh": 203,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Yuigahama_2025_June_30_various_2.jpg",
     "title": "Yuigahama 2025 June 30 various 2.jpg",
@@ -1627,7 +1627,7 @@
    "gh": 301,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kamakura_Yuigahama_beach_during_winter_with_strong_wind_(58597).jpg",
     "title": "Kamakura Yuigahama beach during winter with strong wind (58597).jpg",
@@ -1647,7 +1647,7 @@
    "gh": 301,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kamakura_Yuigahama_beach_during_winter_with_strong_wind.jpg",
     "title": "Kamakura Yuigahama beach during winter with strong wind.jpg",
@@ -1667,7 +1667,7 @@
    "gh": 300,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Enoshima_Electric_Railway_and_Sakai_River_-_panoramio.jpg",
     "title": "Enoshima Electric Railway and Sakai River - panoramio.jpg",
@@ -1687,7 +1687,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Hasedera_Sakurai_Nara_pref58s5s4272.jpg",
     "title": "Hasedera Sakurai Nara pref58s5s4272.jpg",
@@ -1887,7 +1887,7 @@
    "gh": 225,
    "placeholder": true,
    "kimono": true,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Floral_kimono_and_bamboo_(Unsplash).jpg",
     "title": "Floral kimono and bamboo (Unsplash).jpg",
@@ -1907,7 +1907,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": true,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:2019-04-17_Chinese_(or_Korean)_tourists_take_selfies_on_the_balcony_of_the_Kiyomizu-dera_temple.jpg",
     "title": "2019-04-17 Chinese (or Korean) tourists take selfies on the balcony of the Kiyom",
@@ -1929,7 +1929,7 @@
    "gh": 400,
    "placeholder": true,
    "kimono": false,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Otaru_Canal_Cruise_(20240223).jpg",
     "title": "Otaru Canal Cruise (20240223).jpg",
@@ -2007,7 +2007,7 @@
    "gh": 400,
    "placeholder": true,
    "kimono": true,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Wandering_Princess._(Unsplash).jpg",
     "title": "Wandering Princess. (Unsplash).jpg",
@@ -2071,7 +2071,7 @@
    "gh": 266,
    "placeholder": true,
    "kimono": true,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kimono_boy_walking_down_the_Meiji_Shrine,_Tokyo,_Japan;_November_2009.jpg",
     "title": "Kimono boy walking down the Meiji Shrine, Tokyo, Japan; November 2009.jpg",
@@ -2115,7 +2115,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Gustavo-Borges-keynote-presentation-2026.jpg",
     "title": "Gustavo-Borges-keynote-presentation-2026.jpg",
@@ -2139,7 +2139,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:2nd_CTBT_Science_Diplomacy_Symposium_(42404298441).jpg",
     "title": "2nd CTBT Science Diplomacy Symposium (42404298441).jpg",
@@ -2163,7 +2163,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Keynote_(41543202951).jpg",
     "title": "Keynote (41543202951).jpg",
@@ -2187,7 +2187,7 @@
    "gh": 266,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Defense_Secretary_Chuck_Hagel_addresses_the_audience_attending_the_Association_of_the_United_States_Army_Conference_at_the_Walter_E._Washington_Convention_Center_in_Washington_D.C_141015-D-DT527-189.jpg",
     "title": "Defense Secretary Chuck Hagel addresses the audience attending the Association of the Unit",
@@ -2211,7 +2211,7 @@
    "gh": 270,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:President%27s_trip_to_Western_States-_address_by_the_President._President_Kennedy_at_podium,_audience._Las_Vegas,_NV..._-_NARA_-_194271.jpg",
     "title": "President's trip to Western States- address by the President. President Kennedy at podium,",
@@ -2255,7 +2255,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": true,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kimono-clad_woman_with_flowers_in_hair_(Unsplash).jpg",
     "title": "Kimono-clad woman with flowers in hair (Unsplash).jpg",
@@ -2337,7 +2337,7 @@
    "gh": 300,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:New_Farm_Park_picnic_shelter_New_Farm_P1020602.jpg",
     "title": "New Farm Park picnic shelter New Farm P1020602.jpg",
@@ -2361,7 +2361,7 @@
    "gh": 300,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:New_Farm_Park_picnic_tables_New_Farm_P1020601.jpg",
     "title": "New Farm Park picnic tables New Farm P1020601.jpg",
@@ -2385,7 +2385,7 @@
    "gh": 225,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Group_Picnic_Area_Lake_Bob_Sandlin_State_Park_Texas_2023.jpg",
     "title": "Group Picnic Area Lake Bob Sandlin State Park Texas 2023.jpg",
@@ -2394,7 +2394,7 @@
    },
    "sharp": {
     "edge": 3556,
-    "lap": 6819.0
+    "lap": 6819
    }
   },
   {
@@ -2429,7 +2429,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449479882).jpg",
     "title": "Kawazu sakura in Miura (49449479882).jpg",
@@ -2449,7 +2449,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449249721).jpg",
     "title": "Kawazu sakura in Miura (49449249721).jpg",
@@ -2469,7 +2469,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449480192).jpg",
     "title": "Kawazu sakura in Miura (49449480192).jpg",
@@ -2489,7 +2489,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": false,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449249356).jpg",
     "title": "Kawazu sakura in Miura (49449249356).jpg",
@@ -2547,7 +2547,7 @@
    "gh": 266,
    "placeholder": true,
    "kimono": false,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan12s5.jpg",
     "title": "131103 Hokkaido University Botanical Gardens Sapporo Hokkaido Japan12s5.jpg",
@@ -2663,7 +2663,7 @@
    "gh": 400,
    "placeholder": true,
    "kimono": true,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Geisha_@_Kyoto_(13310544883).jpg",
     "title": "Geisha @ Kyoto (13310544883).jpg",
@@ -2687,7 +2687,7 @@
    "gh": 400,
    "placeholder": true,
    "kimono": true,
-   "score": 9.0,
+   "score": 9,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Geisha_@_Kyoto_(13310611423).jpg",
     "title": "Geisha @ Kyoto (13310611423).jpg",
@@ -2751,7 +2751,7 @@
    "gh": 267,
    "placeholder": true,
    "kimono": true,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Day_Out,_Kimono_Style_(34774184923).jpg",
     "title": "Day Out, Kimono Style (34774184923).jpg",
@@ -2771,7 +2771,7 @@
    "gh": 400,
    "placeholder": true,
    "kimono": true,
-   "score": 8.0,
+   "score": 8,
    "credit": {
     "url": "https://commons.wikimedia.org/wiki/File:Yukata_@_Hibiya_Park_Marunouchi_Ondo_Bon-odori_Dance_Festival_(9477150567).jpg",
     "title": "Yukata @ Hibiya Park Marunouchi Ondo Bon-odori Dance Festival (9477150567).jpg",
