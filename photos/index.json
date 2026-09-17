@@ -843,7 +843,21 @@
    "placeholder": false
   }
  ],
- "shouping": [],
+ "shouping": [
+  {
+   "id": "c9beea60fbf0",
+   "sha": "c9beea60fbf0a250130b6839f77f2c00dc4158b10e10e5229b5702bbf70ae70b",
+   "origin": "inbox/shouping/20260917-153839-ai37.jpg",
+   "src": "20260917-153839-ai37.jpg",
+   "fw": 1333,
+   "fh": 2000,
+   "tw": 533,
+   "th": 800,
+   "gw": 267,
+   "gh": 400,
+   "placeholder": false
+  }
+ ],
  "xiaozun": [],
  "xingtai-hefu": [],
  "xingtai-huiyi": [],
