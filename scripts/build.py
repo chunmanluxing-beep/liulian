@@ -97,6 +97,12 @@ def load_photos():
     return out
 
 
+# ★官网实际引用清单★:picture() 是全站唯一产出 <img> 的地方,凡经过它的
+# (板块, id) 就是页面上真的会出现的那一张。渲染时如实收集,写成 photos/onsite.json,
+# 后台据此判断「这张图现在是不是真的在官网上」—— 不另写一套规则,避免两边走偏。
+ONSITE = set()
+
+
 def obfuscate(addr):
     """邮箱轻度实体混淆,防最粗的采集。"""
     return "".join("&#%d;" % ord(c) for c in addr)
@@ -134,6 +140,7 @@ def has_placeholder(photos):
 
 
 def picture(loc, folder, it, size, alt, eager=False, sizes_attr=None):
+    ONSITE.add((folder, it["id"]))
     d = T[loc]["dir"]
     # 授权示意图的 alt 统一标注,读屏与图片加载失败时都能看出这不是客片
     if it.get("placeholder"):
@@ -482,6 +489,42 @@ def render_robots():
             "Sitemap: %ssitemap.xml\n" % SITE_URL)
 
 
+def load_index_raw():
+    """不做退场过滤的原始索引 —— CREDITS.md 记的是★仓库里存在的★全部示意图片。
+    页面上的 credits.html 记的是★页面上正在展示的★那一批(见 render_credits)。
+    两者都随图片被删而自动缩减,署名不会掉队。"""
+    p = os.path.join(ROOT, "photos", "index.json")
+    if not os.path.exists(p):
+        return {}
+    with open(p, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def render_credits_md():
+    """★由 photos/index.json 自动重建★(此前只在 fetch_placeholders.py 里一次性生成,
+    后台删图不会同步,署名台账会越积越旧)。删掉一张示意图 → 这里的条目随之消失。"""
+    idx = load_index_raw()
+    lines = ["# 图片来源 · Image credits", "",
+             "站内示意图片(placeholder)逐张登记;真实客片入库后逐步替换。",
+             "地图数据:Natural Earth 1:10m Admin-1(公有领域,无需署名)。",
+             "标题字体:Noto Serif SC SemiBold 与 Cormorant Garamond(SIL OFL 1.1,自托管子集)。",
+             "",
+             "带 px / lap 的条目另记:源图长边(px)｜清晰度检测值"
+             "(拉普拉斯方差,灰度缩至长边 1200 统一口径)。", ""]
+    for slug in sorted(idx):
+        for it in idx[slug]:
+            c = it.get("credit")
+            if not c:
+                continue
+            row = ("- **%s** · [%s](%s) · %s · **%s**"
+                   % (slug, c["title"], c["url"], c.get("author", "—"), c["license"]))
+            sh = it.get("sharp")
+            if sh:
+                row += " · %dpx · lap %.1f" % (sh["edge"], sh["lap"])
+            lines.append(row)
+    return "\n".join(lines) + "\n"
+
+
 def render_credits():
     photos = load_photos()
     rows = []
@@ -543,10 +586,19 @@ def main():
     ph = load_photos()
     n = sum(len(v) for v in ph.values())
     npl = sum(1 for v in ph.values() for it in v if it.get("placeholder"))
-    for name, body in (("sitemap.xml", render_sitemap()), ("robots.txt", render_robots())):
+    for name, body in (("sitemap.xml", render_sitemap()), ("robots.txt", render_robots()),
+                       ("CREDITS.md", render_credits_md())):
         with open(os.path.join(ROOT, name), "w", encoding="utf-8") as f:
             f.write(body)
-    print("built: index.html + en/index.html + credits.html + sitemap.xml + robots.txt  照片 %d(示意 %d)" % (n, npl))
+    # ★官网实际引用清单★:后台用它来判定「这张图现在是不是真的在官网上」。
+    onsite = {}
+    for folder, pid in sorted(ONSITE):
+        onsite.setdefault(folder, []).append(pid)
+    with open(os.path.join(ROOT, "photos", "onsite.json"), "w", encoding="utf-8") as f:
+        json.dump(onsite, f, ensure_ascii=False, indent=1)
+    print("built: index.html + en/index.html + credits.html + sitemap.xml + robots.txt "
+          "+ CREDITS.md + photos/onsite.json  照片 %d(示意 %d)/ 官网实际引用 %d"
+          % (n, npl, sum(len(v) for v in onsite.values())))
 
 
 if __name__ == "__main__":
