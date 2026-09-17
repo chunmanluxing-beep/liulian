@@ -224,158 +224,17 @@
    "placeholder": false
   },
   {
-   "id": "21e8b3cd4a24",
-   "sha": "21e8b3cd4a24c18b4bd684bad34103d250ca4750dc76a0431ad203c45a18eac5",
-   "src": "c1ca64d82154.jpg",
-   "fw": 2000,
-   "fh": 1125,
-   "tw": 800,
-   "th": 450,
-   "gw": 400,
-   "gh": 225,
-   "placeholder": true,
-   "kimono": false,
-   "score": 8.5,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower,_Minato_City.jpg",
-    "title": "Tokyo Tower, Minato City.jpg",
-    "author": "David Kernan",
-    "license": "CC BY 4.0"
-   }
-  },
-  {
-   "id": "7087bd8a6911",
-   "sha": "7087bd8a6911bc679110bba205cd97f1b62692df1715a51766db3f6234fdc6ab",
-   "src": "f5d86d31fd0c.jpg",
-   "fw": 1335,
+   "id": "ad6d93bb5929",
+   "sha": "ad6d93bb5929515ab62e600807e72a47fb3199f39e5408dc7d856205cfcaff0a",
+   "origin": "inbox/dongjing/20260917-153119-zeyl.jpg",
+   "src": "20260917-153119-zeyl.jpg",
+   "fw": 1333,
    "fh": 2000,
-   "tw": 534,
+   "tw": 533,
    "th": 800,
    "gw": 267,
    "gh": 400,
-   "placeholder": true,
-   "kimono": false,
-   "score": 8.5,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Five-storied_Pagoda,_Sensoji,_Tokyo,_20240824_1103_5616.jpg",
-    "title": "Five-storied Pagoda, Sensoji, Tokyo, 20240824 1103 5616.jpg",
-    "author": "Jakub Hałun",
-    "license": "CC BY 4.0"
-   }
-  },
-  {
-   "id": "d9ea62b8a2dc",
-   "sha": "d9ea62b8a2dc9f89c5df0d7fa7c77c0fb3f3616933e3b1e9c9fba619879b8417",
-   "src": "dd8db21ca418.jpg",
-   "fw": 2000,
-   "fh": 1333,
-   "tw": 800,
-   "th": 533,
-   "gw": 400,
-   "gh": 267,
-   "placeholder": true,
-   "kimono": false,
-   "score": 8.5,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Omotesando_Avenue_at_sunset_from_pedestrian_bridge,_Jingumae,_Shibuya,_Tokyo.jpg",
-    "title": "Omotesando Avenue at sunset from pedestrian bridge, Jingumae, Shibuya, Tokyo.jpg",
-    "author": "gog.creator",
-    "license": "CC BY 4.0"
-   }
-  },
-  {
-   "id": "28df85c9750d",
-   "sha": "28df85c9750d674b59a7a65b84d0c1564fa69ffaaf15dc43c33112c443ccd5e7",
-   "src": "17c38dbb4acb.jpg",
-   "fw": 2000,
-   "fh": 1125,
-   "tw": 800,
-   "th": 450,
-   "gw": 400,
-   "gh": 225,
-   "placeholder": true,
-   "kimono": false,
-   "score": 8,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Minato_City,_Tokyo,_Japan.jpg",
-    "title": "Minato City, Tokyo, Japan.jpg",
-    "author": "David Kernan",
-    "license": "CC BY 4.0"
-   }
-  },
-  {
-   "id": "b46ca4a1e653",
-   "sha": "b46ca4a1e6531e179dca9e163a203fc0f2866000ad6d7f0b68196472ca3dfee0",
-   "src": "affce576d14e.jpg",
-   "fw": 1327,
-   "fh": 2000,
-   "tw": 531,
-   "th": 800,
-   "gw": 265,
-   "gh": 400,
-   "placeholder": true,
-   "kimono": false,
-   "score": 8,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Five-storied_Pagoda_of_Sensoji_Temple_in_Tokyo,_20240824_1103_5615.jpg",
-    "title": "Five-storied Pagoda of Sensoji Temple in Tokyo, 20240824 1103 5615.jpg",
-    "author": "Jakub Hałun",
-    "license": "CC BY 4.0"
-   }
-  },
-  {
-   "id": "1c98b381bcfa",
-   "sha": "1c98b381bcfa0626d991e208631868053874347f08edfc9ddf8894f4241b7f63",
-   "src": "dongjing__11.jpg",
-   "fw": 2000,
-   "fh": 1506,
-   "tw": 800,
-   "th": 602,
-   "gw": 400,
-   "gh": 301,
-   "placeholder": true,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Shibuya_crossing_seen_from_Shibuya_Stream,_2024.jpg",
-    "title": "Shibuya crossing seen from Shibuya Stream, 2024.jpg",
-    "author": "Syced",
-    "license": "CC0"
-   }
-  },
-  {
-   "id": "52997bc99fbf",
-   "sha": "52997bc99fbfe565d7db296f47e9eddb9f05eb8d9796cbdcf6fd4fe02410e5b7",
-   "src": "dongjing__01.jpg",
-   "fw": 1328,
-   "fh": 2000,
-   "tw": 531,
-   "th": 800,
-   "gw": 266,
-   "gh": 400,
-   "placeholder": true,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Five-storied_Pagoda_of_Sensoji_Temple_in_Tokyo,_20240821_1616_5263.jpg",
-    "title": "Five-storied Pagoda of Sensoji Temple in Tokyo, 20240821 1616 5263.jpg",
-    "author": "Jakub Hałun",
-    "license": "CC BY 4.0"
-   }
-  },
-  {
-   "id": "8ec0058654e7",
-   "sha": "8ec0058654e7c20d9439bf7f93b434e2b138783abf6bcdd3f86e9ee1fa99ebf0",
-   "src": "dongjing__05.jpg",
-   "fw": 2000,
-   "fh": 1500,
-   "tw": 800,
-   "th": 600,
-   "gw": 400,
-   "gh": 300,
-   "placeholder": true,
-   "credit": {
-    "url": "https://commons.wikimedia.org/wiki/File:Shibuya_Crossing_2026-01-17.jpg",
-    "title": "Shibuya Crossing 2026-01-17.jpg",
-    "author": "Asanagi",
-    "license": "CC0"
-   }
+   "placeholder": false
   }
  ],
  "fuguang": [
