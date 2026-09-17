@@ -6,8 +6,6 @@
 
 带 px / lap 的条目另记:源图长边(px)｜清晰度检测值(拉普拉斯方差,灰度缩至长边 1200 统一口径)。
 
-- **daban** · [Shinsekai Tsutenkaku at night 2022-04-23.jpg](https://commons.wikimedia.org/wiki/File:Shinsekai_Tsutenkaku_at_night_2022-04-23.jpg) · Dick Thomas Johnson · **CC BY 2.0**
-- **daban** · [Dōtonbori at night, Osaka (19551420339).jpg](https://commons.wikimedia.org/wiki/File:D%C5%8Dtonbori_at_night,_Osaka_(19551420339).jpg) · Kristoffer Trolle from Copenhagen, Denmark · **CC BY 2.0**
 - **dongjing** · [Tokyo Tower, Minato City.jpg](https://commons.wikimedia.org/wiki/File:Tokyo_Tower,_Minato_City.jpg) · David Kernan · **CC BY 4.0**
 - **dongjing** · [Five-storied Pagoda, Sensoji, Tokyo, 20240824 1103 5616.jpg](https://commons.wikimedia.org/wiki/File:Five-storied_Pagoda,_Sensoji,_Tokyo,_20240824_1103_5616.jpg) · Jakub Hałun · **CC BY 4.0**
 - **dongjing** · [Omotesando Avenue at sunset from pedestrian bridge, Jingumae, Shibuya, Tokyo.jpg](https://commons.wikimedia.org/wiki/File:Omotesando_Avenue_at_sunset_from_pedestrian_bridge,_Jingumae,_Shibuya,_Tokyo.jpg) · gog.creator · **CC BY 4.0**
@@ -42,11 +40,6 @@ Feel free to use any of my images · **CC BY 4.0**
 - **liancang** · [Hasedera Sakurai Nara pref58s5s4272.jpg](https://commons.wikimedia.org/wiki/File:Hasedera_Sakurai_Nara_pref58s5s4272.jpg) · 663highland · **CC BY 2.5**
 - **liancang** · [The Great Buddha of Kamakura (Daibutsu).jpg](https://commons.wikimedia.org/wiki/File:The_Great_Buddha_of_Kamakura_(Daibutsu).jpg) · Ray in Manila · **CC BY 2.0**
 - **liancang** · [Great Buddha of Kamakura (19660381206).jpg](https://commons.wikimedia.org/wiki/File:Great_Buddha_of_Kamakura_(19660381206).jpg) · Yoshikazu TAKADA · **CC BY 2.0**
-- **nailiang** · [Sika Deer, Nara, Japan, 20240819 1541 4775.jpg](https://commons.wikimedia.org/wiki/File:Sika_Deer,_Nara,_Japan,_20240819_1541_4775.jpg) · Jakub Hałun · **CC BY 4.0**
-- **nailiang** · [Sika Deer, Miyajima, Japan, 20240816 1653 3982.jpg](https://commons.wikimedia.org/wiki/File:Sika_Deer,_Miyajima,_Japan,_20240816_1653_3982.jpg) · Jakub Hałun · **CC BY 4.0**
-- **nailiang** · [Nara Todai-ji Daibutsuden Interior Daibutsu & Noirin Kannon.jpg](https://commons.wikimedia.org/wiki/File:Nara_Todai-ji_Daibutsuden_Interior_Daibutsu_%26_Noirin_Kannon.jpg) · Zairon · **CC BY 4.0**
-- **nailiang** · [20190121 Tōdai-ji Great Buddha Hall-1.jpg](https://commons.wikimedia.org/wiki/File:20190121_T%C5%8Ddai-ji_Great_Buddha_Hall-1.jpg) · Balon Greyjoy · **CC0**
-- **nailiang** · [Sika Deer in Nara, Japan, 20240819 1539 4763.jpg](https://commons.wikimedia.org/wiki/File:Sika_Deer_in_Nara,_Japan,_20240819_1539_4763.jpg) · Jakub Hałun · **CC BY 4.0**
 - **shouping** · [Sakura 2018 (40380331805).jpg](https://commons.wikimedia.org/wiki/File:Sakura_2018_(40380331805).jpg) · kimubert · **CC BY 2.0**
 - **shouping** · [Floral kimono and bamboo (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Floral_kimono_and_bamboo_(Unsplash).jpg) · Lan Pham lanipham · **CC0**
 - **shouping** · [2019-04-17 Chinese (or Korean) tourists take selfies on the balcony of the Kiyom](https://commons.wikimedia.org/wiki/File:2019-04-17_Chinese_(or_Korean)_tourists_take_selfies_on_the_balcony_of_the_Kiyomizu-dera_temple.jpg) · shankar s. · **CC BY 2.0**
