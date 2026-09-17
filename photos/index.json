@@ -105,19 +105,6 @@
    "placeholder": false
   },
   {
-   "id": "c98fc8b94a3e",
-   "sha": "c98fc8b94a3e352ad9b0ce309b03d3662aab4577f6e1dcf327112a26bf97def6",
-   "origin": "inbox/daban/20260916-155312-d7hf.jpg",
-   "src": "20260916-155312-d7hf.jpg",
-   "fw": 2000,
-   "fh": 1333,
-   "tw": 800,
-   "th": 533,
-   "gw": 400,
-   "gh": 267,
-   "placeholder": false
-  },
-  {
    "id": "89bbea6df804",
    "sha": "89bbea6df804d2ed231c0e6aada65486b06336025f6989222238b1fecf3a3fa3",
    "src": "73da607286e4.jpg",
@@ -510,32 +497,6 @@
    "sha": "770955173bdeec54ccecb025a9ed62ab5f5c1a2d182ae91a7bb21d2c525450ee",
    "origin": "inbox/fuguang/20260916-154501-5umf.jpg",
    "src": "20260916-154501-5umf.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
-   "id": "e5b80561e842",
-   "sha": "e5b80561e842dc62f3b91958927d7181fb1e8ef9b4efa6b7249ff93966098204",
-   "origin": "inbox/fuguang/20260916-154922-h30h.jpg",
-   "src": "20260916-154922-h30h.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
-   "id": "5493e0433861",
-   "sha": "5493e0433861f8422e51e562f98679c65f456e75faaa8b937f573704a4a9cc8d",
-   "origin": "inbox/fuguang/20260916-154935-7t9y.jpg",
-   "src": "20260916-154935-7t9y.jpg",
    "fw": 1333,
    "fh": 2000,
    "tw": 533,
@@ -2417,45 +2378,6 @@
   }
  ],
  "yidou": [
-  {
-   "id": "26186dcfe012",
-   "sha": "26186dcfe012d73f0b7296e9b733ba19fa78aa8aba9a9a7768cb0af2eb4146d7",
-   "origin": "inbox/yidou/20260916-153722-dihi.jpg",
-   "src": "20260916-153722-dihi.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
-   "id": "994e33db685d",
-   "sha": "994e33db685d323681f6008b21fc06e43bdd2f73cea92bd296c20db9aa2b262a",
-   "origin": "inbox/yidou/20260916-153836-07bm.jpg",
-   "src": "20260916-153836-07bm.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
-  {
-   "id": "546fb9f5a9eb",
-   "sha": "546fb9f5a9eb29bb0b0aac93c68128a5efeede2c4bbdb726e4380e53716761f3",
-   "origin": "inbox/yidou/20260916-153845-z5bm.jpg",
-   "src": "20260916-153845-z5bm.jpg",
-   "fw": 1333,
-   "fh": 2000,
-   "tw": 533,
-   "th": 800,
-   "gw": 267,
-   "gh": 400,
-   "placeholder": false
-  },
   {
    "id": "4f2952b8cf27",
    "sha": "4f2952b8cf27364ccb27cb95b21049c8b82dfea264829765352b606ccfb7ec58",
