@@ -34,7 +34,6 @@ Feel free to use any of my images · **CC BY 4.0**
 - **fushishan** · [Lake Kawaguchiko Sakura Mount Fuji 4.JPG](https://commons.wikimedia.org/wiki/File:Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG) · Midori · **CC BY 3.0**
 - **fushishan** · [Fuji, assorted - FujiAssorted6859.jpg](https://commons.wikimedia.org/wiki/File:Fuji,_assorted_-_FujiAssorted6859.jpg) · lumoplank · **CC0**
 - **fushishan** · [12-Chureito-pagoda-and-Mount-Fuji-Japan (29677439878).jpg](https://commons.wikimedia.org/wiki/File:12-Chureito-pagoda-and-Mount-Fuji-Japan_(29677439878).jpg) · Dang Son · **CC0**
-- **jingdu** · [A woman and daughter in kimono at the Monkey Temple in Kyoto (53621315785).jpg](https://commons.wikimedia.org/wiki/File:A_woman_and_daughter_in_kimono_at_the_Monkey_Temple_in_Kyoto_(53621315785).jpg) · Winniepix · **CC BY 2.0**
 - **jingdu** · [Ladies in Kimono in Kiyomizu-dera temple, Kyoto, Japan; June 2015.jpg](https://commons.wikimedia.org/wiki/File:Ladies_in_Kimono_in_Kiyomizu-dera_temple,_Kyoto,_Japan;_June_2015.jpg) · Kristoffer Trolle from Copenhagen, Denmark · **CC BY 2.0**
 - **jingdu** · [2019-04-16 Two lovely lasses in kimonos smile for me against the Togetsukya brid](https://commons.wikimedia.org/wiki/File:2019-04-16_Two_lovely_lasses_in_kimonos_smile_for_me_against_the_Togetsukya_bridge.jpg) · shankar s. · **CC BY 2.0**
 - **jingdu** · [Arashiyama Kimono Forest 2023-01-03 1.jpg](https://commons.wikimedia.org/wiki/File:Arashiyama_Kimono_Forest_2023-01-03_1.jpg) · Scott Mattoon · **CC BY 2.0**
