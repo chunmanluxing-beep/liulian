@@ -6,8 +6,6 @@
 
 带 px / lap 的条目另记:源图长边(px)｜清晰度检测值(拉普拉斯方差,灰度缩至长边 1200 统一口径)。
 
-- **daban** · [Nishinomaru Garden Osaka Castle01s5s3200.jpg](https://commons.wikimedia.org/wiki/File:Nishinomaru_Garden_Osaka_Castle01s5s3200.jpg) · 663highland · **CC BY 2.5**
-- **daban** · [Shinsekai and Tsutenkaku Tower.jpg](https://commons.wikimedia.org/wiki/File:Shinsekai_and_Tsutenkaku_Tower.jpg) · Sakai Yayoi · **CC0**
 - **daban** · [Shinsekai Tsutenkaku at night 2022-04-23.jpg](https://commons.wikimedia.org/wiki/File:Shinsekai_Tsutenkaku_at_night_2022-04-23.jpg) · Dick Thomas Johnson · **CC BY 2.0**
 - **daban** · [Dōtonbori at night, Osaka (19551420339).jpg](https://commons.wikimedia.org/wiki/File:D%C5%8Dtonbori_at_night,_Osaka_(19551420339).jpg) · Kristoffer Trolle from Copenhagen, Denmark · **CC BY 2.0**
 - **dongjing** · [Tokyo Tower, Minato City.jpg](https://commons.wikimedia.org/wiki/File:Tokyo_Tower,_Minato_City.jpg) · David Kernan · **CC BY 4.0**
@@ -34,16 +32,6 @@ Feel free to use any of my images · **CC BY 4.0**
 - **fushishan** · [Lake Kawaguchiko Sakura Mount Fuji 4.JPG](https://commons.wikimedia.org/wiki/File:Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG) · Midori · **CC BY 3.0**
 - **fushishan** · [Fuji, assorted - FujiAssorted6859.jpg](https://commons.wikimedia.org/wiki/File:Fuji,_assorted_-_FujiAssorted6859.jpg) · lumoplank · **CC0**
 - **fushishan** · [12-Chureito-pagoda-and-Mount-Fuji-Japan (29677439878).jpg](https://commons.wikimedia.org/wiki/File:12-Chureito-pagoda-and-Mount-Fuji-Japan_(29677439878).jpg) · Dang Son · **CC0**
-- **jingdu** · [Ladies in Kimono in Kiyomizu-dera temple, Kyoto, Japan; June 2015.jpg](https://commons.wikimedia.org/wiki/File:Ladies_in_Kimono_in_Kiyomizu-dera_temple,_Kyoto,_Japan;_June_2015.jpg) · Kristoffer Trolle from Copenhagen, Denmark · **CC BY 2.0**
-- **jingdu** · [2019-04-16 Two lovely lasses in kimonos smile for me against the Togetsukya brid](https://commons.wikimedia.org/wiki/File:2019-04-16_Two_lovely_lasses_in_kimonos_smile_for_me_against_the_Togetsukya_bridge.jpg) · shankar s. · **CC BY 2.0**
-- **jingdu** · [Arashiyama Kimono Forest 2023-01-03 1.jpg](https://commons.wikimedia.org/wiki/File:Arashiyama_Kimono_Forest_2023-01-03_1.jpg) · Scott Mattoon · **CC BY 2.0**
-- **jingdu** · [Hankyu Arashiyama Station sakura 20201-04-03.jpg](https://commons.wikimedia.org/wiki/File:Hankyu_Arashiyama_Station_sakura_20201-04-03.jpg) · nobu3withfoxy · **CC BY 2.0**
-- **jingdu** · [Geisha @ Kyoto (13310611173).jpg](https://commons.wikimedia.org/wiki/File:Geisha_@_Kyoto_(13310611173).jpg) · Guilhem Vellut from Annecy, France · **CC BY 2.0** · 3840px · lap 2341.4
-- **jingdu** · [Gion koubu nyokouba.jpg](https://commons.wikimedia.org/wiki/File:Gion_koubu_nyokouba.jpg) · Joe Baz · **CC BY 2.0**
-- **jingdu** · [Torii path at Fushimi Inari-taisha (48885121538).jpg](https://commons.wikimedia.org/wiki/File:Torii_path_at_Fushimi_Inari-taisha_(48885121538).jpg) · Maarten Heerlien from Voorschoten, The Netherlands · **CC BY 2.0**
-- **jingdu** · [Kiyomizu-dera panorama.jpg](https://commons.wikimedia.org/wiki/File:Kiyomizu-dera_panorama.jpg) · lumoplank · **CC0**
-- **jingdu** · [Kiyomizu-dera Temple near Otsu (Creative Commons).png](https://commons.wikimedia.org/wiki/File:Kiyomizu-dera_Temple_near_Otsu_(Creative_Commons).png) · jaleain popcut · **CC BY 2.0**
-- **jingdu** · [Torii path at Fushimi Inari-taisha (48885139893).jpg](https://commons.wikimedia.org/wiki/File:Torii_path_at_Fushimi_Inari-taisha_(48885139893).jpg) · Maarten Heerlien from Voorschoten, The Netherlands · **CC BY 2.0**
 - **liancang** · [Rock garden façade of the Inner Buddha Hall, Hase-dera, Kamakura, 2016.jpg](https://commons.wikimedia.org/wiki/File:Rock_garden_fa%C3%A7ade_of_the_Inner_Buddha_Hall,_Hase-dera,_Kamakura,_2016.jpg) · DimiTalen · **CC0**
 - **liancang** · [Hase-dera (3801486791).jpg](https://commons.wikimedia.org/wiki/File:Hase-dera_(3801486791).jpg) · Andrea Schaffer from Sydney, Australia · **CC BY 2.0**
 - **liancang** · [Hase-dera Temple, Kamakura, Japan (14645090803).jpg](https://commons.wikimedia.org/wiki/File:Hase-dera_Temple,_Kamakura,_Japan_(14645090803).jpg) · Mustang Joe · **CC0**
