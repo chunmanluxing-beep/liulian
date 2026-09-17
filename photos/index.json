@@ -898,7 +898,21 @@
   }
  ],
  "xiaozun": [],
- "xingtai-hefu": [],
+ "xingtai-hefu": [
+  {
+   "id": "0c8a42d573c5",
+   "sha": "0c8a42d573c5e5cba8522497aebb2c2a5e4b38b8ed12adaa4672a4683a687720",
+   "origin": "inbox/xingtai-hefu/20260917-154653-gfsk.jpg",
+   "src": "20260917-154653-gfsk.jpg",
+   "fw": 2000,
+   "fh": 1333,
+   "tw": 800,
+   "th": 533,
+   "gw": 400,
+   "gh": 267,
+   "placeholder": false
+  }
+ ],
  "xingtai-huiyi": [],
  "xingtai-hunsha": [],
  "xingtai-jiating": [],
