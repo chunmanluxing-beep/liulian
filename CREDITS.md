@@ -14,14 +14,6 @@
 - **dongjing** · [Shibuya crossing seen from Shibuya Stream, 2024.jpg](https://commons.wikimedia.org/wiki/File:Shibuya_crossing_seen_from_Shibuya_Stream,_2024.jpg) · Syced · **CC0**
 - **dongjing** · [Five-storied Pagoda of Sensoji Temple in Tokyo, 20240821 1616 5263.jpg](https://commons.wikimedia.org/wiki/File:Five-storied_Pagoda_of_Sensoji_Temple_in_Tokyo,_20240821_1616_5263.jpg) · Jakub Hałun · **CC BY 4.0**
 - **dongjing** · [Shibuya Crossing 2026-01-17.jpg](https://commons.wikimedia.org/wiki/File:Shibuya_Crossing_2026-01-17.jpg) · Asanagi · **CC0**
-- **fuguang** · [Hakata yatai and yatai food - 2024 Sept 24 various 11 27 44 788000.jpeg](https://commons.wikimedia.org/wiki/File:Hakata_yatai_and_yatai_food_-_2024_Sept_24_various_11_27_44_788000.jpeg) · Nesnad · **CC BY 4.0**
-- **fuguang** · [Hakata yatai and yatai food - 2024 Sept 24 various 11 29 33 450000.jpeg](https://commons.wikimedia.org/wiki/File:Hakata_yatai_and_yatai_food_-_2024_Sept_24_various_11_29_33_450000.jpeg) · Nesnad · **CC BY 4.0**
-- **fuguang** · [Nakasu Yatai Stalls (19979437930).jpg](https://commons.wikimedia.org/wiki/File:Nakasu_Yatai_Stalls_(19979437930).jpg) · Yoshikazu TAKADA from Tokyo, Japan · **CC BY 2.0**
-- **fuguang** · [Hakata yatai and yatai food - 2024 Sept 24 various 11 27 34 241000.jpeg](https://commons.wikimedia.org/wiki/File:Hakata_yatai_and_yatai_food_-_2024_Sept_24_various_11_27_34_241000.jpeg) · Nesnad · **CC BY 4.0**
-- **fuguang** · [Hakata yatai and yatai food - 2024 Sept 24 various 11 28 56 889000.jpeg](https://commons.wikimedia.org/wiki/File:Hakata_yatai_and_yatai_food_-_2024_Sept_24_various_11_28_56_889000.jpeg) · Nesnad · **CC BY 4.0**
-- **fuguang** · [Dazaifu Tenmangu-55.jpg](https://commons.wikimedia.org/wiki/File:Dazaifu_Tenmangu-55.jpg) · Immanuelle · **CC BY 4.0**
-- **fuguang** · [Dazaifu Tenmangu-Bridge.jpg](https://commons.wikimedia.org/wiki/File:Dazaifu_Tenmangu-Bridge.jpg) · Immanuelle · **CC BY 4.0**
-- **fuguang** · [Dazaifu Tenmangu-47.jpg](https://commons.wikimedia.org/wiki/File:Dazaifu_Tenmangu-47.jpg) · Immanuelle · **CC BY 4.0**
 - **fushishan** · [Chureito Pagoda and Mount Fuji 20241022.jpg](https://commons.wikimedia.org/wiki/File:Chureito_Pagoda_and_Mount_Fuji_20241022.jpg) · This Photo was taken by Supanut Arunoprayote.
 
 Feel free to use any of my images · **CC BY 4.0**
@@ -30,16 +22,6 @@ Feel free to use any of my images · **CC BY 4.0**
 - **fushishan** · [Lake Kawaguchiko Sakura Mount Fuji 4.JPG](https://commons.wikimedia.org/wiki/File:Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG) · Midori · **CC BY 3.0**
 - **fushishan** · [Fuji, assorted - FujiAssorted6859.jpg](https://commons.wikimedia.org/wiki/File:Fuji,_assorted_-_FujiAssorted6859.jpg) · lumoplank · **CC0**
 - **fushishan** · [12-Chureito-pagoda-and-Mount-Fuji-Japan (29677439878).jpg](https://commons.wikimedia.org/wiki/File:12-Chureito-pagoda-and-Mount-Fuji-Japan_(29677439878).jpg) · Dang Son · **CC0**
-- **liancang** · [Rock garden façade of the Inner Buddha Hall, Hase-dera, Kamakura, 2016.jpg](https://commons.wikimedia.org/wiki/File:Rock_garden_fa%C3%A7ade_of_the_Inner_Buddha_Hall,_Hase-dera,_Kamakura,_2016.jpg) · DimiTalen · **CC0**
-- **liancang** · [Hase-dera (3801486791).jpg](https://commons.wikimedia.org/wiki/File:Hase-dera_(3801486791).jpg) · Andrea Schaffer from Sydney, Australia · **CC BY 2.0**
-- **liancang** · [Hase-dera Temple, Kamakura, Japan (14645090803).jpg](https://commons.wikimedia.org/wiki/File:Hase-dera_Temple,_Kamakura,_Japan_(14645090803).jpg) · Mustang Joe · **CC0**
-- **liancang** · [Yuigahama 2025 June 30 various 2.jpg](https://commons.wikimedia.org/wiki/File:Yuigahama_2025_June_30_various_2.jpg) · Nesnad · **CC BY 4.0**
-- **liancang** · [Kamakura Yuigahama beach during winter with strong wind (58597).jpg](https://commons.wikimedia.org/wiki/File:Kamakura_Yuigahama_beach_during_winter_with_strong_wind_(58597).jpg) · Syced · **CC0**
-- **liancang** · [Kamakura Yuigahama beach during winter with strong wind.jpg](https://commons.wikimedia.org/wiki/File:Kamakura_Yuigahama_beach_during_winter_with_strong_wind.jpg) · Syced · **CC0**
-- **liancang** · [Enoshima Electric Railway and Sakai River - panoramio.jpg](https://commons.wikimedia.org/wiki/File:Enoshima_Electric_Railway_and_Sakai_River_-_panoramio.jpg) · surimu · **CC BY 3.0**
-- **liancang** · [Hasedera Sakurai Nara pref58s5s4272.jpg](https://commons.wikimedia.org/wiki/File:Hasedera_Sakurai_Nara_pref58s5s4272.jpg) · 663highland · **CC BY 2.5**
-- **liancang** · [The Great Buddha of Kamakura (Daibutsu).jpg](https://commons.wikimedia.org/wiki/File:The_Great_Buddha_of_Kamakura_(Daibutsu).jpg) · Ray in Manila · **CC BY 2.0**
-- **liancang** · [Great Buddha of Kamakura (19660381206).jpg](https://commons.wikimedia.org/wiki/File:Great_Buddha_of_Kamakura_(19660381206).jpg) · Yoshikazu TAKADA · **CC BY 2.0**
 - **shouping** · [Sakura 2018 (40380331805).jpg](https://commons.wikimedia.org/wiki/File:Sakura_2018_(40380331805).jpg) · kimubert · **CC BY 2.0**
 - **shouping** · [Floral kimono and bamboo (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Floral_kimono_and_bamboo_(Unsplash).jpg) · Lan Pham lanipham · **CC0**
 - **shouping** · [2019-04-17 Chinese (or Korean) tourists take selfies on the balcony of the Kiyom](https://commons.wikimedia.org/wiki/File:2019-04-17_Chinese_(or_Korean)_tourists_take_selfies_on_the_balcony_of_the_Kiyomizu-dera_temple.jpg) · shankar s. · **CC BY 2.0**
@@ -66,12 +48,6 @@ Feel free to use any of my images · **CC BY 4.0**
 - **xingtai-jiating** · [New Farm Park picnic tables New Farm P1020601.jpg](https://commons.wikimedia.org/wiki/File:New_Farm_Park_picnic_tables_New_Farm_P1020601.jpg) · John Robert McPherson · **CC0** · 3840px · lap 3132.9
 - **xingtai-jiating** · [Group Picnic Area Lake Bob Sandlin State Park Texas 2023.jpg](https://commons.wikimedia.org/wiki/File:Group_Picnic_Area_Lake_Bob_Sandlin_State_Park_Texas_2023.jpg) · Larry D. Moore · **CC BY 4.0** · 3556px · lap 6819.0
 - **xingtai-jiating** · [A tiny family walking between these mighty beeches at Park Rozendaal - panoramio.jpg](https://commons.wikimedia.org/wiki/File:A_tiny_family_walking_between_these_mighty_beeches_at_Park_Rozendaal_-_panoramio.jpg) · Henk Monster · **CC BY 3.0**
-- **yidou** · [Kawazu sakura in Miura (49449479882).jpg](https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449479882).jpg) · Raita Futo from Tokyo, Japan · **CC BY 2.0**
-- **yidou** · [Kawazu sakura in Miura (49449249721).jpg](https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449249721).jpg) · Raita Futo from Tokyo, Japan · **CC BY 2.0**
-- **yidou** · [Kawazu sakura in Miura (49449480192).jpg](https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449480192).jpg) · Raita Futo from Tokyo, Japan · **CC BY 2.0**
-- **yidou** · [Kawazu sakura in Miura (49449249356).jpg](https://commons.wikimedia.org/wiki/File:Kawazu_sakura_in_Miura_(49449249356).jpg) · Raita Futo from Tokyo, Japan · **CC BY 2.0**
-- **yidou** · [Izu peninsula UNESCO geopark 2022 Sept 12 various.jpeg](https://commons.wikimedia.org/wiki/File:Izu_peninsula_UNESCO_geopark_2022_Sept_12_various.jpeg) · Nesnad · **CC BY 4.0**
-- **yidou** · [Izu peninsula UNESCO geopark 2022 Sept 12 various 18 32 09 711000.jpeg](https://commons.wikimedia.org/wiki/File:Izu_peninsula_UNESCO_geopark_2022_Sept_12_various_18_32_09_711000.jpeg) · Nesnad · **CC BY 4.0**
 - **zhahuang** · [131103 Hokkaido University Botanical Gardens Sapporo Hokkaido Japan12s5.jpg](https://commons.wikimedia.org/wiki/File:131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan12s5.jpg) · 663highland · **CC BY 2.5**
 - **zhahuang** · [Night view Sapporo Susukino.jpg](https://commons.wikimedia.org/wiki/File:Night_view_Sapporo_Susukino.jpg) · Purity Standard · **CC BY 2.0**
 - **zhahuang** · [131103 Hokkaido University Botanical Gardens Sapporo Hokkaido Japan39o.jpg](https://commons.wikimedia.org/wiki/File:131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan39o.jpg) · 663highland · **CC BY 2.5**
